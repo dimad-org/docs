@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Set errors of elements</TITLE>
+<META NAME="description" CONTENT="Set errors of elements">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node52.html">
+<LINK REL="previous" HREF="node50.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node52.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html605"
+  HREF="node52.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html603"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html597"
+  HREF="node50.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html606"
+  HREF="node52.html">Set misalignment of elements</A>
+<B> Up:</B> <A NAME="tex2html604"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html598"
+  HREF="node50.html">Set corrector values</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001010000000000000000">
+Set errors of elements</A>
+</H2>
+               This operation<A NAME="_sete_"></A>  specifies the  random generation  mode and the name of
+                the elements  that should actually  be affected  by the
+                errors,  and  the intervals locations  in the  beam line
+                where the errors are applied.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+SET Errors ....(maximum 80 characters) 
+<BR>
+nopt 
+<BR>
+nerr 
+<BR>
+name nint <IMG
+ WIDTH="52" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img435.png"
+ ALT="${\rm nb}_{i}\ {\rm nf}_{i}$"> for i from 1 to nint 
+<BR>........... 
+<BR>
+name nint <IMG
+ WIDTH="52" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img435.png"
+ ALT="${\rm nb}_{i}\ {\rm nf}_{i}$"> for i from 1 to nint 
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+The meaning  of the  parameters are the  same as  those of  the SET
+    MIS.... operation which follows.
+     A  special value  of nopt  :   5 ,   is  used to  read the  errors
+    sequentially  from the  fortran  input file  f007.    In this  case
+    however  one needs  to know  the  order of  the element  parameters
+    internal to Dimad. Please contact Lindsay Schachinger to obtain the
+    information needed for correct use of this option.
+
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The example comes from demo7. Just as for error data definition this
+operation is deactivated in demo7.
+
+<P>
+<PRE>
+*SETERROR RANGES
+*3
+*4
+*HFOC 0 HDOC 0 HFDC 0 HDEFOC 0,
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html605"
+  HREF="node52.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html603"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html597"
+  HREF="node50.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html606"
+  HREF="node52.html">Set misalignment of elements</A>
+<B> Up:</B> <A NAME="tex2html604"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html598"
+  HREF="node50.html">Set corrector values</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

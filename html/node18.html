@@ -1,0 +1,417 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Detailed chromatic analysis</TITLE>
+<META NAME="description" CONTENT="Detailed chromatic analysis">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node19.html">
+<LINK REL="previous" HREF="node17.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node19.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html263"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html261"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html255"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html264"
+  HREF="node19.html">Generation of particles</A>
+<B> Up:</B> <A NAME="tex2html262"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html256"
+  HREF="node17.html">COSY translation</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00095000000000000000">
+ Detailed chromatic analysis</A>
+</H2>
+Traces  <A NAME="_deta_"></A>particles  (2 per  plane,   per  momentum)  to  determine  the
+ linearized transfer matrix from the initial point to any related point
+ in the  lattice.  A twiss function  computation is then done  at these
+ points.   The initial  central particle position is assumed  to be  
+<!-- MATH
+ $v_{0}=(x_{0}\ x'_{0}\ y_{0}\ y'_{0})$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.png"
+ ALT="$v_{0}=(x_{0}\ x'_{0}\ y_{0}\ y'_{0})$">.
+
+<P>
+NOTE: no kicks simulating synchrotron oscillation (parameter <IMG
+ WIDTH="45" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img91.png"
+ ALT="$T &lt; 0$"> ) 
+may exist in the lattice. Results are meaningless in the
+ presence of such kicks.
+For each chosen momentum, particles are generated around the point <IMG
+ WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img92.png"
+ ALT="$v_{0}$">
+to compute  the elements  <IMG
+ WIDTH="27" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.png"
+ ALT="$R_{ij}$"> of  the matrix  describing the
+ linear motion around the trajectory defined by the point <IMG
+ WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img92.png"
+ ALT="$v_{0}$">.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+DETAiled chromatic analysis...(up to 80 characters) 
+<BR>
+nh nv nhv 
+<BR><IMG
+ WIDTH="82" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.png"
+ ALT="$x_{0}\ x'_{0}\ y_{0}\ y'_{0}$"> 
+<BR><IMG
+ WIDTH="97" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.png"
+ ALT="$dx\ dx'\ dy\ dy'$"> 
+<BR><IMG
+ WIDTH="76" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.png"
+ ALT="$\beta_{x} \alpha_{x} \eta_{x} {\eta '}_{x}$"> 
+<BR><IMG
+ WIDTH="75" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img97.png"
+ ALT="$\beta_{y} \alpha_{y} \eta_{y} {\eta '}_{y}$"> 
+<BR>
+nener ncoef 
+<BR><IMG
+ WIDTH="114" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img98.png"
+ ALT="$\delta_{1}\ \delta_{2}\ \dots\ \delta_{nener}$"> 
+<BR>
+mlocat [list]
+</TT></PRE>
+
+<P>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+nh <BR>
+
+<P>
+1  <IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img99.png"
+ ALT="$\textstyle \parbox{10cm}{ only $x\ x'$\ motion
+is traced and computed.
+$\beta_{x}\ \alpha_{x}$\ and $\nu_{x}$\ are computed.}$">
+<P>
+0  <IMG
+ WIDTH="457" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.png"
+ ALT="$\textstyle \parbox{10cm}{
+$x\ x'$\ motion alone is not analyzed.}$">
+<BR>
+<BR>
+
+<P>
+nv  <BR>
+
+<P>
+1   
+<IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.png"
+ ALT="$\textstyle \parbox{10cm}{
+only $y\ y'$\ motion is traced and computed.
+$\beta_{y}\ \alpha_{y}$\ and $\nu_{y}$\ are computed.}$">
+<P>
+0   <IMG
+ WIDTH="457" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$\textstyle \parbox{10cm}{
+$y\ y'$\ motion alone is not analyzed.}$">
+<BR>
+<BR>
+
+<P>
+nhv  <BR>
+
+<P>
+1      
+<IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$\textstyle \parbox{10cm}{
+coupled motion $x\ x'$, $y\ y'$\ is traced. The full beam
+matrix is computed.}$">
+<BR>
+<BR>
+
+<P>
+2      
+<IMG
+ WIDTH="457" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.png"
+ ALT="$\textstyle \parbox{10cm}{
+coupled motion is computed. A short print
+for $x\ x...
+...a_{x}\ \beta_{y}\ \alpha_{y}\
+\nu_{x}\ \nu_{y} $\ for all energies requested}$">
+<BR>
+<BR>
+
+<P>
+3      
+<IMG
+ WIDTH="457" HEIGHT="164" ALIGN="MIDDLE" BORDER="0"
+ SRC="img105.png"
+ ALT="$\textstyle \parbox{10cm}{
+in this case three energies have to be defined :
+\par...
+...value is 1.0. When set to
+1.0e03(say)) the printed values are in mm and mrad.}$">
+<BR>
+<BR>
+
+<P>
+4      
+<IMG
+ WIDTH="457" HEIGHT="107" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.png"
+ ALT="$\textstyle \parbox{10cm}{
+The beam matrix values (as defined in the BEAM
+opera...
+...he scale factor SIGFAC
+which can be set via the constant defintion operation.}$">
+<BR>
+<BR>
+
+<P>
+5      
+<IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.png"
+ ALT="$\textstyle \parbox{10cm}{
+same as three with the code added in the first column
+to facilitate some plotting work}$">
+<P>
+<BR>
+<BR>
+
+<P>
+0      
+<IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.png"
+ ALT="$\textstyle \parbox{10cm}{
+coupled $x\ x'$, $y\ y'$\ motion is not analyzed.
+When NH, NV, and NHV are all zero, the program prints the
+centroid positions only.}$">
+<BR>
+<BR>
+
+<P>
+NOTE:  the input  beam must have been defined previously  in a BEAM
+    MATRIX TRACKING operation.
+<BR>
+<BR>
+
+<P>
+dx dx' dy dy' <BR>
+
+<P>
+  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img109.png"
+ ALT="$\textstyle \parbox{10cm}{
+increments at which the off orbit particles are placed
+to compute the sx, cx, sy, cy functions (see
+reference \cite{klb}
+).}$">
+<BR>
+<BR>
+
+<P>
+<!-- MATH
+ $\beta_{x}\ \alpha_{x}\ \eta_{x}\ {\eta '}_{x}\ 
+ \beta_{y}\ \alpha_{y}\ \eta_{y}\ {\eta '}_{y}$
+ -->
+<IMG
+ WIDTH="184" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img110.png"
+ ALT="$\beta_{x}\ \alpha_{x}\ \eta_{x}\ {\eta '}_{x}\
+\beta_{y}\ \alpha_{y}\ \eta_{y}\ {\eta '}_{y}$"> <BR>
+
+<P>
+  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img111.png"
+ ALT="$\textstyle \parbox{10cm}{
+initial values used in the twiss function computations.}$">
+<BR>
+<BR>
+
+<P>
+nener <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$\textstyle \parbox{10cm}{ number of energies for which the analysis
+is done (maximum 15).}$">
+<BR>
+<BR>
+
+<P>
+ncoef <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of coefficients used in the Taylor
+series expansion as a function of momentum (max 6).}$">
+<BR>
+<BR>
+
+<P>
+<!-- MATH
+ $\delta_{1} \dots \delta_{nener}$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.png"
+ ALT="$\delta_{1} \dots \delta_{nener}$"> <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\textstyle \parbox{10cm}{momentum values }$">
+<BR>
+<BR>
+
+<P>
+mlocat <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.png"
+ ALT="$\textstyle \parbox{10cm}{
+indicates the number of intervals in which printing ...
+...T = -1, then printing occurs at end
+of lattice only and no number is in list.}$">
+<BR>
+<BR>
+
+<P>
+list <BR>
+
+<P>
+   <IMG
+ WIDTH="457" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img74.png"
+ ALT="$\textstyle \parbox{10cm}{contains the beginning and end of all
+intervals in wh...
+...der list of machine
+elements) List may contain up to mxlist pairs of numbers.}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The first example, taken from demo7, produces a multiple momentum
+analysis of the beam centroid and beam matrix at the end of the lattice.
+
+<P>
+The second example, taken from demo9, gives a "short" printout of
+the beam centroid and the twiss parameters at every point of the
+lattice, for the on momentum motion.
+
+<P>
+<PRE>
+DETAILED CHROMATIC ANALYSIS
+1 1 1
+0 0 0 0
+0.000001 0.000001 0.000001 0.000001
+49.26950355 0 0 0 22.75617615 0 0 0
+7 5
+0.0 -.001 0.001 -.003 0.003 -.005 0.005
+-1,
+
+detailed
+1 1 2
+0 0 0 0
+1.0e-06 1.0e-06 1.0e-06 1.0e-06
+1.76806 -0.0032 0 0
+15.0736 -0.0034 0 0
+1 0
+0.00
+0;
+stop
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html263"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html261"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html255"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html264"
+  HREF="node19.html">Generation of particles</A>
+<B> Up:</B> <A NAME="tex2html262"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html256"
+  HREF="node17.html">COSY translation</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

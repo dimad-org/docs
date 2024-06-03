@@ -1,0 +1,494 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Elements</TITLE>
+<META NAME="description" CONTENT="Elements">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html127"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html125"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html121"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html128"
+  HREF="node8.html">Beamline definitions</A>
+<B> Up:</B> <A NAME="tex2html126"
+  HREF="node6.html">Element Definitions</A>
+<B> Previous:</B> <A NAME="tex2html122"
+  HREF="node6.html">Element Definitions</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00041000000000000000">
+Elements</A>
+</H2>
+A list  of all element types  and the relevant  parameter keywords
+follows.   Unless  otherwise noted,   all values  default to  zero
+except the aperture, which defaults to 1 meter.
+<PRE><TT>
+  
+<BR><B>drift </B>
+<BR>
+l 		is the length.
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>sbend</B>
+<BR>
+l 		is the length.
+<BR>
+angle 		is the bend angle.
+<BR>
+k1 		<IMG
+ WIDTH="366" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$\textstyle \parbox{8cm}{If the standard convention is being used, k1 is given b...
+...e being used, k1 is $n = -\frac{\rho}{B_{0}}\frac{\partial B_{0}}{\partial x}$}$">
+<BR>
+e1 		is the entrance edge angle.
+<BR>
+e2 		is the exit edge angle.
+<BR>
+tilt 		<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$\textstyle \parbox{8cm}{is the tilt angle. If tilt is entered with no value, halfturn/2 is assumed.}$">
+<BR>
+k2 		<IMG
+ WIDTH="366" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$\textstyle \parbox{8cm}{If the standard convention is being used, k2 is given b...
+..., k2 is$\beta=\frac{\rho^{2}}{2B_{0}}\frac{\partial^{2}B_{0}}{\partial x^{2}}$}$">
+<BR>
+h1 		is the entrance pole face curvature.
+<BR>
+h2 		is the exit pole face curvature.
+<BR>
+hgap 		<IMG
+ WIDTH="366" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$\textstyle \parbox{8cm}{is the entrance half gap size. If hgapx is not given a ...
+... of hgap. Duringfitting, however, both hgap and hgapx must be varied together.}$">
+<BR>
+fint 		<IMG
+ WIDTH="366" HEIGHT="125" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$\textstyle \parbox{8cm}{is the entrance fringe field integral, which defaults t...
+...xit half gap size. See hgap.fintx is the exit fringe field integral. See fint.}$">
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>rbend</B>		<IMG
+ WIDTH="502" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$\textstyle \parbox{11cm}{The rbend is a parallel faced dipole magnet. Its param...
+...ided bythe user and are set by the program to half the value of the bendangle.}$">
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>quadrupole</B>
+<BR>
+l 		is the length.
+<BR>
+k1 		is the strength.
+<BR>
+tilt 		<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$\textstyle \parbox{8cm}{is the tilt angle. If tilt is entered with no value, halfturn/4 is assumed.}$">
+<BR>
+aperture 		is the magnet aperture for the Hardware operation
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>sextupole</B>
+<BR>
+l 		is the length.
+<BR>
+k2 		is the strength.
+<BR>
+tilt 		<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$\textstyle \parbox{8cm}{is the tilt angle. If tilt is entered with no value, halfturn/6 is assumed.}$">
+<BR>
+aperture 		is the magnet aperture for the Hardware operation
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>quadsext</B>
+<BR>
+l 		is the length.
+<BR>
+k1 		is the quadrupole strength.
+<BR>
+k2 		is the sextupole strength.
+<BR>
+tilt 		<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$\textstyle \parbox{8cm}{is the tilt angle. If tilt is entered with no value, halfturn/4 is assumed.}$">
+<BR>
+aperture 		is the magnet aperture for the Hardware operation
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>octupole</B>
+<BR>
+l 		is the strength.
+<BR>
+k3 		is the strength.
+<BR>
+tilt 		<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$\textstyle \parbox{8cm}{is the tilt angle. If tilt is entered with no value, halfturn/8 is assumed.}$">
+<BR>
+aperture 		is the magnet aperture for the Hardware operation.
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>multipole</B>
+<BR>
+l 		<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$\textstyle \parbox{8cm}{is the length. If the length is zero, the strengths are interpreted as integrated strengths.}$">
+<BR>
+k0 - k20 		are the strengths.
+<BR>
+t0 - t20 		<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$\textstyle \parbox{8cm}{are the tilt angles. If tn is entered without a value, halfturn/2(n+1) is assumed.}$">
+<BR>
+scalefac 		<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$\textstyle \parbox{8cm}{is a dimensionless strength factor, used to scale all the strengths together.}$">
+<BR>
+tilt 		is the overall tilt angle.
+<BR>
+aperture 		is the magnet aperture for the Hardware operation.
+<BR>
+note1 : 		<IMG
+ WIDTH="502" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$\textstyle \parbox{11cm}{ only the components with non zero amplitude are store...
+...g errors via the ERROR definition then enter components with small amplitudes.}$">
+<BR>
+note2 : 		<IMG
+ WIDTH="502" HEIGHT="163" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$\textstyle \parbox{11cm}{when a quadrupole or a sextupole component is present ...
+...important in computing misalignment effects with multipole components present.}$">
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>solenoid</B>
+<BR>
+l 		is the length.
+<BR>
+ks 		is the solenoid strength. ks=0.5*Bs/Brho.
+<BR>
+k1 		is the quadrupole strength.
+<BR>
+tilt 		<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$\textstyle \parbox{8cm}{is the tilt angle. If tilt is entered with no value, halfturn/4 is assumed.}$">
+<BR>
+aperture 		is the magnet aperture for the Hardware operation.
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>quadac </B> 		<IMG
+ WIDTH="502" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$\textstyle \parbox{11cm}{(linac cavity containing a quadrupole element)}$">
+<BR>
+l 		is the length.
+<BR>
+k1 		is the quadrupole strength
+<BR>
+deltae 		<IMG
+ WIDTH="366" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$\textstyle \parbox{8cm}{is the energy increment per unit length in GeV/m given by the cavity to a particle riding on the crest of the wave.}$">
+<BR>
+phi0 		<IMG
+ WIDTH="366" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$\textstyle \parbox{8cm}{is the phase of the reference particle with respect to the RF wave.}$">
+<BR>
+freq 		is the frequency of the RF in MHz.
+<BR>
+e0 		is the energy in GeV of the reference particle
+<BR>
+tilt 		<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$\textstyle \parbox{8cm}{is the tilt angle. If tilt is entered with no value, halfturn/4 is assumed.}$">
+<BR>
+aperture 		is the magnet aperture for the Hardware operation.
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>rfcavity</B>
+<BR>
+l 		is the length.
+<BR>
+volt 		is the cavity voltage.(kV for Utransport)
+<BR>
+lag 		<IMG
+ WIDTH="366" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$\textstyle \parbox{8cm}{is the phase lag of the cavity with respect to a nominal particle (0,0,0,0,0,0) at the start of the machine.(Degrees for Utransport)}$">
+<BR>
+freq 		<IMG
+ WIDTH="366" HEIGHT="202" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$\textstyle \parbox{8cm}{is the frequency of the cavity.(Hz for Utransport) In p...
+...type (electrons or protons) is selected via the constant definition operation.}$">
+<BR>
+energy 		is the energy.(GeV)
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>roll</B>		<IMG
+ WIDTH="502" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$\textstyle \parbox{11cm}{This element performs a rotation of the coordinate system about the longitudinal axis.}$">
+<BR>
+angle 		<IMG
+ WIDTH="366" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$\textstyle \parbox{8cm}{is the rotation angle. A positive angle means the new c...
+... system is rotated clockwise about the s- axis with respect to the old system.}$">
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>zrot</B>		<IMG
+ WIDTH="502" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$\textstyle \parbox{11cm}{This element performs a rotation of the coordinate system about the vertical axis. The angle must be small.}$">
+<BR>
+angle 		<IMG
+ WIDTH="366" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$\textstyle \parbox{8cm}{is the rotation angle. A positive angle means the new c...
+...em is rotated clockwise about the local z-axis with respect to the old system.}$">
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>hkick, vkick</B>				<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$\textstyle \parbox{8cm}{These elements are translated by the program into general kicks (gkick).}$">
+<BR>
+kick 		a horizontal (vertical) kick of size kick,
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>gkick</B>		<IMG
+ WIDTH="502" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$\textstyle \parbox{11cm}{This element is a general kick.}$">
+<BR>
+l 		is the length.
+<BR>
+dx 		is the change in x.
+<BR>
+dxp 		is the change in x'.
+<BR>
+dy 		is the change in y.
+<BR>
+dyp 		is the change in y'.
+<BR>
+dl 		is the change in path length.
+<BR>
+dp 		is the change in dp/p.
+<BR>
+angle 		<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$\textstyle \parbox{8cm}{is the angle through which the coordinates are rotated about the longitudinal axis.}$">
+<BR>
+dz 		is the longitudinal displacement.
+<BR>
+v 		<IMG
+ WIDTH="366" HEIGHT="103" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$\textstyle \parbox{8cm}{is the extrance-exit parameter of the kick. v is positi...
+... force the kick to be applied every abs(v) turns. The default value of v is 1.}$">
+<BR>
+t 		<IMG
+ WIDTH="366" HEIGHT="259" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$\textstyle \parbox{8cm}{is the momentum dependence parameter. The kicks dx' and...
+...ine oscillation is proportional to the pathlength of the reference trajectory.}$">
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>hmon, vmon, monitor</B>				<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$\textstyle \parbox{8cm}{These elements are horizontal, vertical, and horizontal and vertical monitors, respectively.}$">
+<BR>
+l 		is the monitor length.
+<BR>
+xserr,		not used presently
+<BR>
+yserr,		not used presently
+<BR>
+xrerr,		not used presently
+<BR>
+yrerr 		not used presently
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>marker</B>		<IMG
+ WIDTH="502" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$\textstyle \parbox{11cm}{A marker is a drift element of zero length. It has no parameters.}$">
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>ecollimator, rcollimator</B>				<IMG
+ WIDTH="366" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$\textstyle \parbox{8cm}{An ecollimator is elliptic, and an rcollimator is recta...
+.... The particles are checked at the entrance and at the exit of the collimator.}$">
+<BR>
+l 		is the length.
+<BR>
+xsize 		 x collimator aperture
+<BR>
+ysize 		y  collimator aperture   The default                apertures are 1 meter.
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>arbitelm</B>		<IMG
+ WIDTH="502" HEIGHT="125" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\textstyle \parbox{11cm}{This is the arbitrary element. Its parameters are used...
+... only be recognized by the program through the use of one parameter as a flag.}$">
+<BR>
+l 		is the length.
+<BR>
+p1 - p20 		are the parameters.
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>mtwiss</B>
+<BR>
+l 		is the length.
+<BR>
+mux,		 x phase advance of twiss matrix
+<BR>
+betax,		 x beta value of twiss matrix
+<BR>
+alphax,		 x alpha value of twiss matrix
+<BR>
+muy,		 x phase advance of twiss matrix
+<BR>
+betay,		 y beta value of twiss matrix
+<BR>
+alphay 		 <IMG
+ WIDTH="366" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.png"
+ ALT="$\textstyle \parbox{8cm}{y alpha value of twiss matrix betax and betay have default values of 1.}$">
+<BR>
+<BR>
+<BR>
+<BR>
+<BR><B>matrix</B>		<IMG
+ WIDTH="502" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle \parbox{11cm}{This element is a general transfer matrix.}$">
+<BR>
+rij 		 first order ij element of matrix      
+<BR>
+tijk 		<IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.png"
+ ALT="$\textstyle \parbox{8cm}{second order ijk element of matrix, i,j and k range from 1 to 6, but j is always less than or equal to k.}$">
+</TT></PRE><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html127"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html125"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html121"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html128"
+  HREF="node8.html">Beamline definitions</A>
+<B> Up:</B> <A NAME="tex2html126"
+  HREF="node6.html">Element Definitions</A>
+<B> Previous:</B> <A NAME="tex2html122"
+  HREF="node6.html">Element Definitions</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

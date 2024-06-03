@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Machine and beam parameters computations</TITLE>
+<META NAME="description" CONTENT="Machine and beam parameters computations">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node27.html">
+<LINK REL="previous" HREF="node25.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node27.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html343"
+  HREF="node27.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html341"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html335"
+  HREF="node25.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html344"
+  HREF="node27.html">Matrix computation</A>
+<B> Up:</B> <A NAME="tex2html342"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html336"
+  HREF="node25.html">Line geometric aberrations :one</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000913000000000000000">
+Machine and beam parameters computations</A>
+</H2>
+Computes<A NAME="_mach_"></A> <!-- MATH
+ $\beta,\ \alpha, \ \eta,  \ \eta ',  \ \nu$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img203.png"
+ ALT="$\beta,\ \alpha, \ \eta, \ \eta ', \ \nu$"> values at selected points 
+ around
+ the machine.    If requested beam  parameters are computed.    In some
+ cases, the optimum coupling values may be meaningless(if coupling is &gt;
+ 1).
+<PRE><TT>
+<B>Input Format</B> 
+<BR>
+MACHine and beam parameters....(up to 80 char) 
+<BR>
+e1 e2 de nlum dnu nint nbunch 
+<BR><IMG
+ WIDTH="94" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.png"
+ ALT="$ \beta_{x} \ \alpha_{x} \ \eta_{x} \ \eta_{p_{x}} $"> 
+<BR><IMG
+ WIDTH="92" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img205.png"
+ ALT="$ \beta_{y} \ \alpha_{y} \ \eta_{y} \ \eta_{p_{y}} $"> mprint [list]
+</TT></PRE>
+
+<P>
+Note:  if e1  is zero  then nlum  is assumed 0 and  the input twiss
+ parameters values  are those obtained  in a previous  matrix analysis.
+ If e1 is non zero but <IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img206.png"
+ ALT="$\beta_{x} $"> is zero, the first line of parameters must
+ be given and the initial twiss parameters  values will be those of the
+ preceding matrix analysis.
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+e1   start   momentum   for   beam   data   and   luminosity
+                computations.
+<BR>
+
+<P>
+e2           end momentum
+<BR>
+
+<P>
+de           momentum step
+<BR>
+
+<P>
+nlum <BR>
+
+<P>
+0   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img207.png"
+ ALT="$\textstyle \parbox{10cm}{no beam size related
+computations are done.}$">
+<BR>
+
+<P>
+1   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.png"
+ ALT="$\textstyle \parbox{10cm}{ synchrotron integrals and
+basic beam size computations
+are done.}$">
+<BR>
+
+<P>
+2   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img209.png"
+ ALT="$\textstyle \parbox{10cm}{ Full luminosity computations are made.}$">
+<BR>
+
+<P>
+dnu          dnu value used for optimum luminosity computation.
+<BR>
+
+<P>
+nint         number of interaction regions
+<BR>
+
+<P>
+nbunch       number of bunches
+<BR>
+
+<P>
+<!-- MATH
+ $\beta_{x}...\eta_{p_{y}}$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.png"
+ ALT="$\beta_{x}...\eta_{p_{y}}$">
+
+<P>
+function values at starting point of lattice.
+
+<P>
+mprint <BR>
+
+<P>
+ -2   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img211.png"
+ ALT="$\textstyle \parbox{10cm}{ no printing of results}$">
+<P>
+ -1   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img212.png"
+ ALT="$\textstyle \parbox{10cm}{ print final result only.}$">
+<P>
+0   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.png"
+ ALT="$\textstyle \parbox{10cm}{ print all intermediary
+and final results.}$">
+<P>
+n   <IMG
+ WIDTH="457" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img214.png"
+ ALT="$\textstyle \parbox{10cm}{ ${\rm n}&gt;0$\ is used with list.
+There are n intervals in which
+printing will occur.}$">
+<BR>
+
+<P>
+list   <IMG
+ WIDTH="457" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img215.png"
+ ALT="$\textstyle \parbox{10cm}{ beginning and end positions
+of each interval in whi...
+...airs of numbers.
+List may contain up to mxlist numbers (set at 40
+initially)}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The first example, from demo2, shows a general use of this operation.
+
+<P>
+The second example from demo9 shows how to use this operation when one
+needs only the list of the twiss parameters around the lattice. Notice
+that in this case the operation must be preceded by a matrix analysis
+and that both motions (horizontal and vertical) must be stable.
+
+<P>
+<PRE>
+MACHINE AND BEAM PARAMETERS. NO LUMINOSITY COMPUTATIONS.
+1 1.2 .2 0 0.025 1 1
+21.357376 0 0 0 3.940971 0 0 0 1 1 53,
+
+MACH
+0,
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html343"
+  HREF="node27.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html341"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html335"
+  HREF="node25.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html344"
+  HREF="node27.html">Matrix computation</A>
+<B> Up:</B> <A NAME="tex2html342"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html336"
+  HREF="node25.html">Line geometric aberrations :one</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

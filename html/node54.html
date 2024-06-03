@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Show or save misalignment values</TITLE>
+<META NAME="description" CONTENT="Show or save misalignment values">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node55.html">
+<LINK REL="previous" HREF="node53.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node55.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html635"
+  HREF="node55.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html633"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html627"
+  HREF="node53.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html636"
+  HREF="node55.html">Synchrotron radiation data definition</A>
+<B> Up:</B> <A NAME="tex2html634"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html628"
+  HREF="node53.html">Show corrector values</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001013000000000000000">
+Show or save misalignment values</A>
+</H2>
+     This  operation<A NAME="_shom_"></A>  displays  the  actual  values  of  the
+                displacement  generated  in   previous  operations  and
+                provides  manipulation of  the misalignement  features.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+SHO Misalignment 
+<BR>
+nopt  [<IMG
+ WIDTH="44" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img448.png"
+ ALT="$n{i}\ m_{i}$"> for i from 1 to nopt] <BR>
+<BR>.... <BR>
+<BR>
+99, 
+<BR>
+MISFAC 
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+nopt  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img450.png"
+ ALT="$\textstyle \parbox{10cm}{
+option number deciding on the action to be taken according
+to the description following }$">
+<BR>
+
+<P>
+0  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img451.png"
+ ALT="$\textstyle \parbox{10cm}{
+All misalignement values are printed}$">
+<BR>
+
+<P>
+   <IMG
+ WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img317.png"
+ ALT="$&gt;$">0  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img452.png"
+ ALT="$\textstyle \parbox{10cm}{
+nopt intervals are defined with the nopt pairs of numbers
+$n_{i}\ m_{i}$\ . The misalignment values
+are printed in these intervals}$">
+<BR>
+
+<P>
+   -1  <IMG
+ WIDTH="457" HEIGHT="144" ALIGN="MIDDLE" BORDER="0"
+ SRC="img453.png"
+ ALT="$\textstyle \parbox{10cm}{
+Arrays containing all the
+misalignement data are se...
+... if needed define some other
+misalignment data to superimpose on the previous.}$">
+<BR>
+
+<P>
+   -2  <IMG
+ WIDTH="457" HEIGHT="236" ALIGN="MIDDLE" BORDER="0"
+ SRC="img454.png"
+ ALT="$\textstyle \parbox{10cm}{
+This choice of the parameter nopt allows to add some...
+...tion must be preceded by a SHO MIS
+operation with option -1 to be successful.}$">
+<BR>
+
+<P>
+    -10  <IMG
+ WIDTH="457" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img455.png"
+ ALT="$\textstyle \parbox{10cm}{
+This operation provides information of the average lateral
+displacement of the element labeled name using the scale
+factor SIGFAC.}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The different examples given all come from demo6.
+
+<P>
+<PRE>
+SHOMIS
+0,
+
+****** following operations sets up array of misalignement to increase
+****** the computation speed
+Sho mis
+-1,
+
+****** the following shows a listing of the average lateral displacement
+****** of a given misaligned element
+sho mis
+-10 hc,
+
+**** the following adds a random fractional misalignment to some
+**** element. For this operation to be operational a 'sho mis' with
+**** option -1 must have preceded. The additional misalignement is
+**** added to the previously defined misalignement.
+sho mis
+-2
+hc mrks1 mrks2,
+99
+0.5,
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

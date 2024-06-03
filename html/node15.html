@@ -1,0 +1,453 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Beam matrix tracing</TITLE>
+<META NAME="description" CONTENT="Beam matrix tracing">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node16.html">
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html233"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html231"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html225"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html234"
+  HREF="node16.html">Constant definition</A>
+<B> Up:</B> <A NAME="tex2html232"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html226"
+  HREF="node14.html">Adiabatic variation</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00092000000000000000">
+   Beam matrix tracing</A>
+</H2>
+Computes <A NAME="_beam_"></A>  beam  matrices  at  selected  points  of  the
+                machine from  the initial  beam matrix  defined in  the
+                input of the operation.
+The equation of the six dimensional ellipsoid enclosing the beam is
+<!-- MATH
+ $X^{t}\Sigma^{-1}X = 1$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.png"
+ ALT="$X^{t}\Sigma^{-1}X = 1$">
+
+<P>
+<PRE><TT>
+ <B>Input  format</B> 
+<BR><P>
+BEAM matrix tracing.... (up to 80 characters)
+</TT></PRE>
+followed by :
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{cccccc}
+ \sigma _{x}&r_{xp_{x}}&r_{xy}&r_{xp_{y}}&r_{xl}&r_{x\delta} \\
+ &\sigma _{p_{x}}&r_{p_{x}y}&r_{p_{x}p_{y}}&r_{p_{x}l}&r_{p_{x}\delta}
+\\
+ &&\sigma_{y}&r_{yp_{y}}&r_{yl}&r_{y\delta} \\
+ &&&\sigma_{p_{y}}&r_{p_{y}l}&r_{p_{y}\delta} \\
+ &&&&\sigma_{l}&r_{l\delta} \\
+ &&&&&\sigma_{\delta} \\
+ mprint&  [mlist]&&&&
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="292" HEIGHT="140" BORDER="0"
+ SRC="img52.png"
+ ALT="\begin{displaymath}\begin{array}{cccccc}
+\sigma _{x}&amp;r_{xp_{x}}&amp;r_{xy}&amp;r_{xp_{y...
+...\\
+&amp;&amp;&amp;&amp;&amp;\sigma_{\delta} \\
+mprint&amp; [mlist]&amp;&amp;&amp;&amp;
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+or  :
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{ccccc}
+0&&&& \\
+\beta_{x}&\alpha_{x}&\eta_{x}&\eta_{p_{x}}&\epsilon_{x} \\
+\beta_{y}&\alpha_{y}&\eta_{y}&\eta_{p_{y}}&\epsilon_{y} \\
+\sigma_{l}&\sigma_{\delta}&&& \\
+ mprint&  [mlist]&&&
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="212" HEIGHT="102" BORDER="0"
+ SRC="img53.png"
+ ALT="\begin{displaymath}\begin{array}{ccccc}
+0&amp;&amp;&amp;&amp; \\
+\beta_{x}&amp;\alpha_{x}&amp;\eta_{x}&amp;...
+...gma_{l}&amp;\sigma_{\delta}&amp;&amp;&amp; \\
+mprint&amp; [mlist]&amp;&amp;&amp;
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+or  :
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{ccccc}
+0&&&& \\
+ 0&0&0&0&\epsilon_{x} \\
+ 0&0&0&0&\epsilon_{y} \\
+\sigma_{l}&\sigma_{\delta}&&& \\
+ mprint&  [mlist]&&&
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="190" HEIGHT="102" BORDER="0"
+ SRC="img54.png"
+ ALT="\begin{displaymath}\begin{array}{ccccc}
+0&amp;&amp;&amp;&amp; \\
+0&amp;0&amp;0&amp;0&amp;\epsilon_{x} \\
+0&amp;0...
+...gma_{l}&amp;\sigma_{\delta}&amp;&amp;&amp; \\
+mprint&amp; [mlist]&amp;&amp;&amp;
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<B>Parameter definitions</B>
+
+<P>
+The relationship between the <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.png"
+ ALT="$\Sigma$"> beam matrix and the input
+coefficients is as follows :
+
+<P>
+Let <IMG
+ WIDTH="27" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.png"
+ ALT="$\Sigma_{ij}$">, with <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img57.png"
+ ALT="$i$"> and <IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$j$"> taking the values <IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img59.png"
+ ALT="$x$">, <IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$p_{x}$">, <IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$y$">,
+<IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.png"
+ ALT="$p_{y}$">, <IMG
+ WIDTH="9" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.png"
+ ALT="$l$"> and <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="$\delta$">, be the elements of the symmetric positive
+definite matrix <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.png"
+ ALT="$\Sigma$">. Then the following formulae describe the
+relationship between <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.png"
+ ALT="$\Sigma$"> and the input parameters :
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{rcll}
+\sigma_{i}&=&\sqrt{\Sigma_{ii}}&{\rm =\ value\ of\ maximum\ extent\ 
+of\ beam } \\
+r_{ij}&=&\frac{\Sigma_{ij}}{\sigma_{i}\sigma_{j}}&{\rm\ =\ 
+correlation\ factor }
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="375" HEIGHT="50" BORDER="0"
+ SRC="img65.png"
+ ALT="\begin{displaymath}\begin{array}{rcll}
+\sigma_{i}&amp;=&amp;\sqrt{\Sigma_{ii}}&amp;{\rm =\ v...
+...gma_{i}\sigma_{j}}&amp;{\rm\ =\
+correlation\ factor }
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR>
+<BR>
+
+<P>
+<IMG
+ WIDTH="24" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.png"
+ ALT="$\beta \alpha$"> <IMG
+ WIDTH="412" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.png"
+ ALT="$\textstyle \parbox{9cm}{Twiss parameter values defining a beam
+ellipsoid}$">
+<BR>
+<BR>
+
+<P>
+<IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.png"
+ ALT="$\eta$"> <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$\textstyle \parbox{10 cm}{$\eta$\ -function values to define momentum
+dependent terms in the beam ellipsoid}$">
+<BR>
+<BR>
+
+<P>
+<IMG
+ WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$\epsilon_{x}$"> and <IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.png"
+ ALT="$\epsilon_{y}$"> are the horizontal and vertical
+emittances. In this case, the beam is assumed uncoupled .
+<BR>
+<BR>
+
+<P>
+NOTE :<IMG
+ WIDTH="457" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.png"
+ ALT="$\textstyle \parbox{10cm}{ when using the third input option
+($\beta_{x}$\ is 0...
+...om a previously run movement analysis calculation done with a
+matrix operation}$">
+<BR>
+<BR>
+
+<P>
+mprint <IMG
+ WIDTH="457" HEIGHT="319" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.png"
+ ALT="$\textstyle \parbox{10cm}{\ \ \newline
+\par
+-2\ \ no computation is done. The op...
+...ove but a table of beam
+envelopes is printed instead of the full beam matrix.}$">
+<BR>
+<BR>
+
+<P>
+mlist  <IMG
+ WIDTH="457" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img74.png"
+ ALT="$\textstyle \parbox{10cm}{contains the beginning and end of all
+intervals in wh...
+...der list of machine
+elements) List may contain up to mxlist pairs of numbers.}$">
+<BR>
+<BR>
+
+<P>
+<B>Units</B>
+<BR>
+<BR>
+
+<P>
+<!-- MATH
+ $\sigma_{x},\ \sigma_{y},\ \sigma_{l},\ \beta_{x},\ \beta_{y},
+\ \eta_{x},\ \eta_{y}$
+ -->
+<IMG
+ WIDTH="191" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.png"
+ ALT="$\sigma_{x},\ \sigma_{y},\ \sigma_{l},\ \beta_{x},\ \beta_{y},
+\ \eta_{x},\ \eta_{y}$"> are measured in meters
+<BR>
+<BR>
+
+<P>
+<!-- MATH
+ $\sigma_{p_{x}},\ \sigma_{p_{y}},\ \eta_{p_{x}},\ \eta_{p_{y}}$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img76.png"
+ ALT="$\sigma_{p_{x}},\ \sigma_{p_{y}},\ \eta_{p_{x}},\ \eta_{p_{y}}$"> are
+measured in
+radians.
+<BR>
+<BR>
+
+<P>
+<!-- MATH
+ $\epsilon_{x},\ \epsilon_{y}$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$\epsilon_{x},\ \epsilon_{y}$"> are measured in m-radians.
+<BR>
+<BR>
+
+<P>
+<!-- MATH
+ $\sigma_{\delta}$
+ -->
+<IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img78.png"
+ ALT="$\sigma_{\delta}$"> unit is one.
+<BR>
+<BR>
+
+<P>
+The correlation coefficients <IMG
+ WIDTH="22" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.png"
+ ALT="$r_{ij}$"> are dimensionless and vary 
+from <IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$-1$"> to <IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img81.png"
+ ALT="$+1$">
+<BR>
+<BR>
+
+<P>
+<B>Examples</B>
+
+<P>
+Three examples are given. The first is extracted from demo 7 , the
+second and third are extracted from demo 2.
+
+<P>
+The first shows the definition of the beam
+using the extension <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img82.png"
+ ALT="$\sigma$"> 's.
+
+<P>
+The second defines the transverse part of the beam by using the twiss
+parameters and the emittances.
+
+<P>
+The third shows a definition used in conjunction with a previous matrix
+analysis. It uses the twiss parameters obtained in that analysis and the
+value of the tranverse emittances.
+
+<P>
+<PRE>
+BEAM MATRIX TRACING
+0.00012157290 0 0 0 0 0
+  0.00000246750 0 0 0 0
+    0.0000826254 0 0 0
+       0.0000036309 0 0
+                    0.002 0
+                      0.005
+-1,
+
+   beam definition
+   0
+   1.0 0 0 0 1.0e-06
+   2.0 0 0 0 1.0e-06
+   0.001 0.001
+   0,
+
+MATRIX : FIRST ORDER CELL MATRIX.
+1 -1,
+BEAM MATRIX
+0
+0 0 0 0 1.0E-06
+0 0 0 0 1.0E-06
+0.02 0.001
+-1;
+</PRE><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html233"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html231"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html225"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html234"
+  HREF="node16.html">Constant definition</A>
+<B> Up:</B> <A NAME="tex2html232"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html226"
+  HREF="node14.html">Adiabatic variation</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

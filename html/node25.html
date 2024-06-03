@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Line geometric aberrations :one turn computation</TITLE>
+<META NAME="description" CONTENT="Line geometric aberrations :one turn computation">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node26.html">
+<LINK REL="previous" HREF="node24.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node26.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html333"
+  HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html331"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html325"
+  HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html334"
+  HREF="node26.html">Machine and beam parameters</A>
+<B> Up:</B> <A NAME="tex2html332"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html326"
+  HREF="node24.html">Least square fit</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000912000000000000000">
+Line geometric aberrations :one turn computation</A>
+</H2>
+This operation <A NAME="_line_"></A>traces npart particles, placed on ellipses with nominal
+ emittances <!-- MATH
+ ${\epsilon_{x}}_{i}, {\epsilon_{x}}_{i}$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img188.png"
+ ALT="${\epsilon_{x}}_{i}, {\epsilon_{x}}_{i}$"> 
+   for one turn.  It then fits an ellipse to
+ the output points  obtained.   From this fitted  ellipse it determines
+ the average values for 
+<!-- MATH
+ $\beta_{x},\  \alpha_{x},\ \beta_{y},\ \alpha_{y},
+\ \nu_{x}, \ \nu_{y}, \ \epsilon_{x}, {\rm and}\ \epsilon_{y}$
+ -->
+<IMG
+ WIDTH="246" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img189.png"
+ ALT="$\beta_{x},\ \alpha_{x},\ \beta_{y},\ \alpha_{y},
+\ \nu_{x}, \ \nu_{y}, \ \epsilon_{x}, {\rm and}\ \epsilon_{y}$">.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+LINEgeometric aberrations....(up to 80 characters) 
+<BR><IMG
+ WIDTH="95" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$\beta_{x},\alpha_{x},\beta_{y},\alpha_{y}$"> 
+<BR><IMG
+ WIDTH="131" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.png"
+ ALT="$x_{co},\ x'_{co},\ y_{co},\ y'_{co},$"> ener 
+<BR>
+ncase,npart,ncoup 
+<BR>
+nplot,nprint,mlocat,[list] 
+<BR><IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="${\epsilon_{x}}_{i} ,\ {\epsilon_{y}}_{i}$"> for <IMG
+ WIDTH="39" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img192.png"
+ ALT="$i=1$"> to ncase 
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+<!-- MATH
+ $\beta_{x},\ \alpha_{x},\ \beta_{y},\ \alpha_{y}$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$\beta_{x},\alpha_{x},\beta_{y},\alpha_{y}$"> <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img193.png"
+ ALT="$\textstyle \parbox{10cm}{
+input values of the twiss parameters at the entrance of
+the line.}$">
+<BR>
+<BR>
+
+<P>
+<!-- MATH
+ $x_{co},\ x'_{co},\ y_{co},\ y'_{co},$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.png"
+ ALT="$x_{co},\ x'_{co},\ y_{co},\ y'_{co},$"> ener <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img194.png"
+ ALT="$\textstyle \parbox{10cm}{
+coordinates and the momentum of the trajectory around
+which the aberrations are to be computed.}$">
+<BR>
+
+<P>
+ncase  <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of cases analyzed(maximum 10).}$">
+<BR>
+
+<P>
+npart  <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img196.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of particles to be traced(maximum 300).}$">
+<BR>
+
+<P>
+ncoup   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.png"
+ ALT="$\textstyle \parbox{10cm}{
+not used presently, but a value must be inserted.}$">
+<BR>
+
+<P>
+nplot <BR>
+
+<P>
+1   <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.png"
+ ALT="$\textstyle \parbox{10cm}{
+plot the resulting particles at the end of the job. It
+computes its own plotting windows.}$">  -1   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$\textstyle \parbox{10cm}{
+no plotting.}$">
+<BR>
+
+<P>
+nprint <BR>
+
+<P>
+  -2   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.png"
+ ALT="$\textstyle \parbox{10cm}{
+no printing.}$">
+<P>
+  -1   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img199.png"
+ ALT="$\textstyle \parbox{10cm}{
+printing at end of the line only.}$">
+<P>
+0   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img200.png"
+ ALT="$\textstyle \parbox{10cm}{
+printing after every element}$">
+<BR>
+
+<P>
+mlocat    <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.png"
+ ALT="$\textstyle \parbox{10cm}{ number of intervals in which printing is to occur; used
+in conjunction with list. This is not yet implemented.}$">
+<BR>
+
+<P>
+list    <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.png"
+ ALT="$\textstyle \parbox{10cm}{ intervals in which printing occurs. List may contain
+up to mxlist numbers (set at 40 initially)}$">
+<BR>
+
+<P>
+<!-- MATH
+ ${\epsilon_{x}}_{i}  ,\ {\epsilon_{y}}_{i}$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="${\epsilon_{x}}_{i} ,\ {\epsilon_{y}}_{i}$"> <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.png"
+ ALT="$\textstyle \parbox{10cm}{
+ncase values for the chosen nominal
+emittances in x and y using the unit
+mm-mrad (E-06 m-rad)}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+This example is fictitious.
+
+<P>
+<PRE>
+line geometric aberrations
+0.19518E+01 -0.5862785371E-01 0.1816010291E+02  0.3831956152E-01
+0 0 0 0 0
+3 100 0
+1 -1 0 40
+38 38
+75 75
+150 150;
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

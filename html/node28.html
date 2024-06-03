@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Modification of element data</TITLE>
+<META NAME="description" CONTENT="Modification of element data">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node29.html">
+<LINK REL="previous" HREF="node27.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node29.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html363"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html361"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html355"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html364"
+  HREF="node29.html">Movement analysis</A>
+<B> Up:</B> <A NAME="tex2html362"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html356"
+  HREF="node27.html">Matrix computation</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000915000000000000000">
+Modification of element data</A>
+</H2>
+This operation <A NAME="_modi_"></A>enables user to change input parameters between successive operations.
+ It is particularly  useful in simulations of  injection and extraction
+ processes  in conjunction  with  the kick  elements  and the  TRACking
+ operation.
+<PRE><TT>
+<B>Input Format</B> 
+<BR>
+MODIfication of input parameters...(up to 80 char) 
+<BR>
+n 
+<BR><IMG
+ WIDTH="148" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img225.png"
+ ALT="${\rm name}_{i} \ {\rm pkeyw}_{i} \ {\rm value}_{i}$"> for <IMG
+ WIDTH="39" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img192.png"
+ ALT="$i=1$">to n.
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+n  <IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img226.png"
+ ALT="$\textstyle \parbox{10cm}{ number of modifications to be made
+(i.e. number of 'name pkeyw
+value' entries which follow).}$">
+<BR>
+
+<P>
+<!-- MATH
+ ${\rm name}_{i}$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img227.png"
+ ALT="${\rm name}_{i}$">  <IMG
+ WIDTH="457" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.png"
+ ALT="$\textstyle \parbox{10cm}{ name of the machine
+element which is to be varied.}$">
+<BR>
+
+<P>
+<!-- MATH
+ ${\rm pkeyw}_{i}$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.png"
+ ALT="${\rm pkeyw}_{i}$">  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img230.png"
+ ALT="$\textstyle \parbox{10cm}{ keyword of the parameter
+in the given element which is
+to be changed.}$">
+<BR>
+
+<P>
+<!-- MATH
+ ${\rm value}_{i}$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img231.png"
+ ALT="${\rm value}_{i}$">  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img232.png"
+ ALT="$\textstyle \parbox{10cm}{ value that the parameter
+will assume.}$">
+<BR>
+
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The example comes from demo3 .
+
+<P>
+<PRE>
+MODIFY SEXTUPOLE STRENGTH TO CHANGE CLOSED ORBIT POSITION.
+1
+SEXTUPOL K2 5.0,
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

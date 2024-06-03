@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Misalignment data definition</TITLE>
+<META NAME="description" CONTENT="Misalignment data definition">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node48.html">
+<LINK REL="previous" HREF="node46.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node48.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html565"
+  HREF="node48.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html563"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html557"
+  HREF="node46.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html566"
+  HREF="node48.html">Reference orbit display</A>
+<B> Up:</B> <A NAME="tex2html564"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html558"
+  HREF="node46.html">Error data definition</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000106000000000000000">
+Misalignment data definition</A>
+</H2>
+This operation <A NAME="_misa_"></A>defines the misalignments  of different elements of the
+ lattice. Up to mxmis(100) distinct elements can be misaligned.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+MISAlignment data definition....(maximum 80 characters) 
+<BR>
+Name dm1 dm2 dm3 dm4 dz dzr ddel option 
+<BR>............. 
+<BR>
+Name dm1 dm2 dm3 dm4 dz dzr ddel option 
+<BR>
+99,
+</TT></PRE>
+
+<P>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+For all values of the option  parameter,  the parameters dz and dzr
+    are the  values of the  longitudinal displacement and  the rotation
+    angle (in  radians!!)  around  the longitudinal  axis.  The  values
+   dm1,dm2,dm3 and dm4 are assumed to  be small (either in displaments
+    or angles).   The  program uses approximate formulae to  set up the
+    misaligned element.
+   The  parameter option  can take  the three  values 1,2  or 3  which
+    determines the nature of the misalignment
+<BR>
+<BR>
+
+<P>
+option   parameter to determine the nature of the misalignment
+<BR>
+
+<P>
+1  <IMG
+ WIDTH="457" HEIGHT="125" ALIGN="MIDDLE" BORDER="0"
+ SRC="img412.png"
+ ALT="$\textstyle \parbox{10cm}{
+The element is misaligned around the tangent to the
+...
+... ,dyr
+are rotation angles (in radians) around the axes x
+and y respectively.}$">
+<BR>
+
+<P>
+2  <IMG
+ WIDTH="457" HEIGHT="125" ALIGN="MIDDLE" BORDER="0"
+ SRC="img413.png"
+ ALT="$\textstyle \parbox{10cm}{
+The element is misaligned around the chord defined
+...
+...2,dy2 are the displacements at
+the exit of the element along the axes x and y}$">
+<BR>
+
+<P>
+3  <IMG
+ WIDTH="457" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img414.png"
+ ALT="$\textstyle \parbox{10cm}{
+The element is misaligned around the tangent to the
+...
+...1,dm2,dm3 and dm4 have the same
+meaning as in the case of the option value 1.}$">
+<BR>
+
+<P>
+4  <IMG
+ WIDTH="457" HEIGHT="164" ALIGN="MIDDLE" BORDER="0"
+ SRC="img415.png"
+ ALT="$\textstyle \parbox{10cm}{
+This does not apply to dipole elements (Bends). In
+...
+...rs dz dzr
+are in effect but not ddel.This should be mainly
+used on monitors.}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The example comes from demo6. Please note that when an element has 
+zero length, the option of the misalignment of that element must be
+1.
+
+<P>
+<PRE>
+MISALIGNMENT DEFINITION
+DDCH  300E-06 300E-06 300E-06 300E-06 0.0010 0.001 0.0 2
+DFCH  300E-06 300E-06 300E-06 300E-06 0.0010 0.001 0.0 2
+HC    300E-06 300E-06 300E-06 300E-06 0.0010 0.000 0.0 2
+DSH  300E-06 300E-06 300E-06 300E-06 0.0010 0.001 0.0 2
+QS1D 300E-06 300E-06 300E-06 300E-06 0.0010 0.001 0.0 2
+QS2F 300E-06 300E-06 300E-06 300E-06 0.0010 0.001 0.0 2
+QS2D 300E-06 300E-06 300E-06 300E-06 0.0010 0.001 0.0 2
+QS3F 300E-06 300E-06 300E-06 300E-06 0.0010 0.001 0.0 2
+QS3D 300E-06 300E-06 300E-06 300E-06 0.0010 0.001 0.0 2
+99,
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html565"
+  HREF="node48.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html563"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html557"
+  HREF="node46.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html566"
+  HREF="node48.html">Reference orbit display</A>
+<B> Up:</B> <A NAME="tex2html564"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html558"
+  HREF="node46.html">Error data definition</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

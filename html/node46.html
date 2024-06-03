@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Error data definition</TITLE>
+<META NAME="description" CONTENT="Error data definition">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node47.html">
+<LINK REL="previous" HREF="node45.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node47.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html555"
+  HREF="node47.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html553"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html547"
+  HREF="node45.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html556"
+  HREF="node47.html">Misalignment data definition</A>
+<B> Up:</B> <A NAME="tex2html554"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html548"
+  HREF="node45.html">Corrector data definition</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000105000000000000000">
+Error data definition</A>
+</H2>
+This operation<A NAME="_erro_"></A> defines  the errors that can  affect certain parameters
+ of elements.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+ERROrs data definition ....(maximum 80 Characters) 
+<BR>
+Name Parameter value .... parameter value; 
+<BR>............... 
+<BR>
+Name Parameter value .... parameter value; 
+<BR>
+99,
+</TT></PRE>
+
+<P>
+Note  the  semicolon ending  each  line  defining errors  for  one
+    element  and  note the  line  containing  99,   to end  the  input.
+    Parameter and value are the parameter keyword of the element called
+    name that  is affected by  the error.  Value  is the value  of the
+    error.
+
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The example comes from demo7.
+
+<P>
+<PRE>
+**** THE ERROR COMPUTATION IS TURNED OFF:IT IS TIME CONSUMING
+*ERRORS DATA DEFINITION
+*HFOC 3  40,
+*HDOC 3  40,
+*HFDC 3  40,
+*HDEFOC 3  40,
+*99,
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

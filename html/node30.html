@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Output control</TITLE>
+<META NAME="description" CONTENT="Output control">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node31.html">
+<LINK REL="previous" HREF="node29.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node31.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html383"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html381"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html375"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html384"
+  HREF="node31.html">Particle distribution analysis</A>
+<B> Up:</B> <A NAME="tex2html382"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html376"
+  HREF="node29.html">Movement analysis</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000917000000000000000">
+Output control</A>
+</H2>
+This operation <A NAME="_outp_"></A>provides control of the output printout It affects only
+ the dimat part of the output.
+<PRE><TT>
+<B>Input format</B>   
+<BR>
+OUTPut control ...................(up to 80 characters) 
+<BR>
+nopt
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+nopt
+<BR>
+
+<P>
+0   <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="$\textstyle \parbox{10cm}{ all output is supressed (except
+error messages)}$">
+<BR>
+
+<P>
+1   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.png"
+ ALT="$\textstyle \parbox{10cm}{ The main results of the computation
+only are printed}$">
+<BR>
+
+<P>
+2   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img258.png"
+ ALT="$\textstyle \parbox{10cm}{ The main results and the input
+data are printed}$">
+<BR>
+
+<P>
+3   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img259.png"
+ ALT="$\textstyle \parbox{10cm}{ All output is printed}$">
+<BR>
+
+<P>
+4   <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img260.png"
+ ALT="$\textstyle \parbox{10cm}{ Used for short printing of
+tracking results when such
+printing can be used for input to plotting programs.}$">
+<BR>
+
+<P>
+14   <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.png"
+ ALT="$\textstyle \parbox{10cm}{ Same as 4 . The fifth coordinate
+will then be the phase
+relative to an RF cavity instead of the path length.}$">
+<BR>
+
+<P>
+Note :  <IMG
+ WIDTH="457" HEIGHT="106" ALIGN="MIDDLE" BORDER="0"
+ SRC="img262.png"
+ ALT="$\textstyle \parbox{10cm}{not all output is affected
+by the option 14 in the
+...
+... suppress printout and the NOECHO
+can be reversed by use of the command ECHO.}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+All three examples come from demo6 and demo7 where they are use
+extensively to reduce the amount of output produced by the program.
+
+<P>
+<PRE>
+OUTPUT CONTROL
+3,
+
+OUTPUT CONTROL
+1,
+
+OUTPUT CONTROL
+0,
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

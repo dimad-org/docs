@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Set corrector values</TITLE>
+<META NAME="description" CONTENT="Set corrector values">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node51.html">
+<LINK REL="previous" HREF="node49.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node51.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html595"
+  HREF="node51.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html593"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html587"
+  HREF="node49.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html596"
+  HREF="node51.html">Set errors of elements</A>
+<B> Up:</B> <A NAME="tex2html594"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html588"
+  HREF="node49.html">Seed selection</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000109000000000000000">
+Set corrector values</A>
+</H2>
+This operation<A NAME="_setc_"></A> is used to manually set corrector to some predetermined
+ values
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+SET Corrector values 
+<BR>
+Name pos opt p1...p4, 
+<BR>.................... 
+<BR>
+Name pos opt p1...p4, 
+<BR>
+99,
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+Name   <IMG
+ WIDTH="457" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img427.png"
+ ALT="$\textstyle \parbox{10cm}{
+Name of corrector element whose value is to be set}$">
+<BR>
+
+<P>
+pos  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img428.png"
+ ALT="$\textstyle \parbox{10cm}{
+position of corrector}$">
+<BR>
+
+<P>
+p1...p4  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img429.png"
+ ALT="$\textstyle \parbox{10cm}{
+the four parameters used to define the corrector.}$">
+<BR>
+
+<P>
+opt  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img430.png"
+ ALT="$\textstyle \parbox{10cm}{
+option number defining the kind of corrector}$">
+<BR>
+
+<P>
+0  <IMG
+ WIDTH="457" HEIGHT="126" ALIGN="MIDDLE" BORDER="0"
+ SRC="img431.png"
+ ALT="$\textstyle \parbox{10cm}{
+p1 is dx,p2 is dy,p3 is dy' and p4 is ddel The
+corr...
+...ddel (This simulates the
+effect of backleg windings providing a change in By)}$">
+<BR>
+
+<P>
+1  <IMG
+ WIDTH="457" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img432.png"
+ ALT="$\textstyle \parbox{10cm}{
+the parameters have the same definition as above. Th...
+...net is assumed
+fixed. The operation of dy' and ddel remain the same as
+above}$">
+<BR>
+
+<P>
+2  <IMG
+ WIDTH="457" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img433.png"
+ ALT="$\textstyle \parbox{10cm}{
+As for option 1 the parameters keep their definition...
+...s 1 and 2 a momentum independent slope is
+computed and imposed on the magnet.}$">
+<BR>
+
+<P>
+3  <IMG
+ WIDTH="457" HEIGHT="125" ALIGN="MIDDLE" BORDER="0"
+ SRC="img434.png"
+ ALT="$\textstyle \parbox{10cm}{
+In this option the corrector acts as a pure dipole
+...
+...ided by 1+delta
+where delta is the relative momentum of the particle
+traced.}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

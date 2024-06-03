@@ -1,0 +1,536 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Least square fit</TITLE>
+<META NAME="description" CONTENT="Least square fit">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node25.html">
+<LINK REL="previous" HREF="node23.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node25.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html323"
+  HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html321"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html315"
+  HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html324"
+  HREF="node25.html">Line geometric aberrations :one</A>
+<B> Up:</B> <A NAME="tex2html322"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html316"
+  HREF="node23.html">Layout printing of machine</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000911000000000000000">
+       Least square fit</A>
+</H2>
+This  operation  <A NAME="_leas_"></A>handles  most  fitting problems.   Some  care  must  be
+ exercised in the  choice of nstep and nit.  Experience  will show what
+ choices are best suited to the problem.   A safe choice is 2 2 (1 1 is
+ faster but less accurate).   If the program  is very slow at finding a
+ solution  or if  overflow  condition is  developed  in the  subroutine
+ LMDIF,  the solution  sought is probably not a practical  one. The new
+ minimizer LMDIF   was installed  in December  1984.  It  has a default
+ tolerance  and  default  increments  for   the  variables  which  seem
+ adequate.   As a  consequence  the input  parameters  del(i)  have  no
+ influence.  We  have kept them  to avoid  changes in the  input format.
+
+<P>
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+LEASt square fit of .....(up to 80 char) 
+<BR>
+nstep nit nvar ncond 
+<BR><IMG
+ WIDTH="186" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.png"
+ ALT="$\beta_{x},\alpha_{x},\eta_{x},\eta'_{x}, \beta_{y},\alpha_{y},\eta_{y},\eta'_{y}$"> 
+<BR>
+name<IMG
+ WIDTH="9" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$_{i}$"> pkeyw<IMG
+ WIDTH="9" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$_{i}$"> del<IMG
+ WIDTH="9" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$_{i}$"> for i = 1 to nvar 
+<BR>
+nval<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$_{j}$"> valf<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$_{j}$"> weight<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$_{j}$"> for j = 1 to ncond 
+<BR>
+nasp 
+<BR>
+repeat the following nasp times 
+<BR>
+name<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img159.png"
+ ALT="$_{1}$"> npas 
+<BR>
+name<IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$_{k}$"> pkeyw<IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$_{k}$"> coef<IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$_{k}$"> for k = 1 to npas 
+<BR><P>
+
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+nstep   
+ <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.png"
+ ALT="$\textstyle \parbox{10cm}{ number of steps taken to approach final fit.}$">
+<BR>
+
+<P>
+nit        
+ <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.png"
+ ALT="$\textstyle \parbox{10cm}{ number of iterations used in final step of fit.}$">
+<BR>
+
+<P>
+nvar       
+ <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.png"
+ ALT="$\textstyle \parbox{10cm}{ number of independent variables(max:mxlvar).}$">
+<BR>
+
+<P>
+ncond      
+ <IMG
+ WIDTH="457" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.png"
+ ALT="$\textstyle \parbox{10cm}{ number of conditions to be met(max:mxlcnd).
+Note tha...
+... satisfy the condition
+\begin{displaymath}nvar\ &lt;= \ ncond \end{displaymath}}$">
+<BR>
+
+<P>
+<!-- MATH
+ $\beta_{x} \dots \eta'_{y}$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img165.png"
+ ALT="$\beta_{x} \dots \eta'_{y}$"> <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img166.png"
+ ALT="$\textstyle \parbox{10cm}{
+initial values needed for the function computation.W...
+...values computed in the last matrix
+operation preceding the present operation.}$">
+<BR>
+
+<P>
+name<IMG
+ WIDTH="9" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$_{i}$"> <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img167.png"
+ ALT="$\textstyle \parbox{10cm}{
+name of element with an independent parameter to be
+varied.}$">
+<BR>
+
+<P>
+pkeyw<IMG
+ WIDTH="9" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$_{i}$">
+ <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img168.png"
+ ALT="$\textstyle \parbox{10cm}{ variable element parameter keyword}$">
+<BR>
+
+<P>
+del<IMG
+ WIDTH="9" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$_{i}$"> <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img169.png"
+ ALT="$\textstyle \parbox{10cm}{
+this parameter is not used in the new minimizer
+imp...
+...ation, but was kept in the input to avoid a
+major change in the input format.}$">
+<BR>
+
+<P>
+nval<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$_{j}$">:  <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="145" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.png"
+ ALT="$\textstyle \parbox{10cm}{
+reference number of output value to be fitted.
+\par...
+...tay, dmuy/ddelta,
+chromy (chromaticity in y), dalphay/ddelta, dbetay/ddelta.}$"> 
+<BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img171.png"
+ ALT="$\textstyle \parbox{10cm}{
+Numbers 65 to 68 refer to detax/ddelta detapx/ddelta...
+... detapy/ddelta as computed in the stable
+motion analysis of the total matrix.}$">
+<BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.png"
+ ALT="$\textstyle \parbox{10cm}{
+Numbers 21 to 30 refer to betax alphax etax etapx nu...
+...puted from the initial values
+present in the second line of the input format.}$">
+<BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img173.png"
+ ALT="$\textstyle \parbox{10cm}{
+Numbers 31 to 40 refer to the values betax nuy computed
+at the first fit point defined by the preceding SET Fit
+point operation.}$">
+<BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img174.png"
+ ALT="$\textstyle \parbox{10cm}{
+Numbers 1031 to 1040 refer to the difference between...
+...econd
+fit point defined by the preceding SET Fit point
+operation.(ie.:v2-v1)}$">
+<BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="125" ALIGN="MIDDLE" BORDER="0"
+ SRC="img175.png"
+ ALT="$\textstyle \parbox{10cm}{
+Numbers 41 to 61 refer to the beam values sigx ...
+...
+...am values
+at the begining of the machine has preceded the fitting
+operation.}$">
+<BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.png"
+ ALT="$\textstyle \parbox{10cm}{
+Numbers 71 to 91 refer to the same beam values computed
+at the first fit point defined by the operation SET Fit
+point.}$">
+<BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img177.png"
+ ALT="$\textstyle \parbox{10cm}{
+Numbers 1071 to 1091 refer to the differences of the...
+...irst and second fit
+point defined by the operation SET Fit
+point.(ie.:v2-v1)}$">
+<BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="106" ALIGN="MIDDLE" BORDER="0"
+ SRC="img178.png"
+ ALT="$\textstyle \parbox{10cm}{
+Numbers 93 to 98 fit the average chromatic errors fo...
+...on is done which
+serves to define the parameters needed for the
+computation.}$">
+<BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="88" ALIGN="MIDDLE" BORDER="0"
+ SRC="img179.png"
+ ALT="$\textstyle \parbox{10cm}{
+Selected numbers 110 to 666 specify matrix elements ...
+...ents the second order matrix element
+T(i,j,k) (as in the TRANSPORT notation).}$">
+<BR>
+
+<P>
+valf<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$_{j}$"> 
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img180.png"
+ ALT="$\textstyle \parbox{10cm}{ value to be achieved.}$">
+<BR>
+
+<P>
+weight<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$_{j}$"> 
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img181.png"
+ ALT="$\textstyle \parbox{10cm}{
+weight attached to the value(j) in the fit function.}$">
+<BR>
+
+<P>
+nasp  <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img182.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of associated parameters. If nasp = 0, then the
+following data is not to be entered.}$">
+<BR>
+
+<P>
+name<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img159.png"
+ ALT="$_{1}$"> <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img183.png"
+ ALT="$\textstyle \parbox{10cm}{
+name of the basic parameter to which the associated
+parameters are connected. It must be present in the
+list of basic parameters.}$">
+<BR>
+
+<P>
+npas      
+ <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of parameters to be associated to name1 (max:6).}$">
+<BR>
+
+<P>
+name<IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$_{k}$"> <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img185.png"
+ ALT="$\textstyle \parbox{10cm}{
+name of one element having a parameter associated to
+name1.}$">
+<BR>
+
+<P>
+pkeyw<IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$_{k}$"> <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img186.png"
+ ALT="$\textstyle \parbox{10cm}{
+keyword of the parameter of name$_{k}$\ associated with
+name$_{1}$.}$">
+<BR>
+
+<P>
+coef<IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$_{k}$"> <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="88" ALIGN="MIDDLE" BORDER="0"
+ SRC="img187.png"
+ ALT="$\textstyle \parbox{10cm}{
+coefficient with which the BASE parameter (that of
+...
+...e multiplied to obtain the value of the
+\newline
+\par
+parameter of name$_{k}$.}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The first two  examples come from demo1. The second example is given to 
+illustrate the use of associated parameters. Refer to demo1 for the 
+meaning of the element names.
+
+<P>
+The third example comes from demo4. It illustrates the use of associated
+parameters and shows how beam matrix elements can be fitted.
+
+<P>
+<PRE>
+least square FIT OF QUADRUPOLE STRENGTH FOR A 90 DEGREE CELL.
+1 1 2 2
+* since this a cell fit the twiss values are irrelevant but
+* values must be put in (beta =/ 0)
+1.0 0 0 0
+1.0 0 0 0
+QFONE K1 .001
+QD1 K1 .001
+2 .25 1.0 12 .25 1.0
+0;
+
+least square FIT OF QUADRUPOLE STRENGTH FOR A 90 DEGREE CELL.
+1 1 2 2
+1.0 0 0 0
+1.0 0 0 0
+QFONE K1 .001
+QD1 K1 .001
+2 .25 1.0 12 .25 1.0
+1
+QFONE  1
+QFTWO K1 1.0,
+
+
+LEAST SQUARE FIT FOR COMPENSATION OF SOLENOIDAL FIELD
+1 2 8 12
+0.53 0 0 0 0.04 0 0 0
+Q1 K1 .001 Q2D K1 .001 Q3D K1 .001
+QSKEW1 K1 .001 QSKEW2 K1 .001
+QSKEW3 K1 .001 KQ5E ANGLE .001 EFSA L .0001
+21 8.975 1 22 1.3341 1 26 20.709 1 27 1.2077 1
+130 0 1 140 0 1 230 0 1 240 0 1
+310 0 1 320 0 1 410 0 1 420 0 1
+2
+EFSA 3
+E41X L -1
+E42E L 1
+FSB L -1
+KQ5E 1
+KQ4X ANGLE -1,
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html323"
+  HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html321"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html315"
+  HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html324"
+  HREF="node25.html">Line geometric aberrations :one</A>
+<B> Up:</B> <A NAME="tex2html322"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html316"
+  HREF="node23.html">Layout printing of machine</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

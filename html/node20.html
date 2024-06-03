@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Geometric aberrations in multiturn operation</TITLE>
+<META NAME="description" CONTENT="Geometric aberrations in multiturn operation">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node21.html">
+<LINK REL="previous" HREF="node19.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node21.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html283"
+  HREF="node21.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html281"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html275"
+  HREF="node19.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html284"
+  HREF="node21.html">Hardware values listing of</A>
+<B> Up:</B> <A NAME="tex2html282"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html276"
+  HREF="node19.html">Generation of particles</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00097000000000000000">
+Geometric aberrations in multiturn operation</A>
+</H2>
+
+<P>
+This  operation <A NAME="_geom_"></A>traces  particles  that  are placed  on
+  ellipses with  nominal emittances  
+<!-- MATH
+ $\epsilon_{x_{i}},\ \epsilon_{y_{i}}$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.png"
+ ALT="$\epsilon_{x_{i}},\ \epsilon_{y_{i}}$"> for
+                many  turns.  It  then fits  an ellipse  to the  output
+                points obtained. From this fitted ellipse it determines
+the average values for 
+<BR>
+<!-- MATH
+ $\beta_{x}, \ \alpha_{x}, \ \beta_{y}, \ \alpha_{y},
+\ \nu_{x},\ \nu_{y},\ \epsilon_{x},  and\ \epsilon_{y}$
+ -->
+<IMG
+ WIDTH="247" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.png"
+ ALT="$\beta_{x}, \ \alpha_{x}, \ \beta_{y}, \ \alpha_{y},
+\ \nu_{x},\ \nu_{y},\ \epsilon_{x}, and\ \epsilon_{y}$">.  
+It also computes the maxima
+                and minima emittances which informs about the diffusion
+               pattern of the motion.  Variances of the tunes are also
+                computed.
+<PRE><TT>
+               Input format 
+<BR>
+GEOMetric aberrations .......(up to 80 characters) 
+<BR><IMG
+ WIDTH="95" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$\beta_{x},\alpha_{x},\beta_{y},\alpha_{y}$"> 
+<BR><IMG
+ WIDTH="110" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$x_{co},x'_{co},y_{co},y'_{co}$">,ener 
+<BR>
+ncase,nturn,njob 
+<BR>
+nplot,nprint 
+<BR><IMG
+ WIDTH="180" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.png"
+ ALT="${\epsilon_{x}}_{1} , {\epsilon_{y}}_{1} \dots {\epsilon_{x}}_{ncase} , {\epsilon_{y}}_{ncase}$"> 
+<BR>
+anplprt
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+<!-- MATH
+ $\beta_{x}, \alpha_{x}, \beta_{y}, \alpha_{y}$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$\beta_{x},\alpha_{x},\beta_{y},\alpha_{y}$">
+<BR>
+
+<P>
+ 
+<IMG
+ WIDTH="457" HEIGHT="106" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.png"
+ ALT="$\textstyle \parbox{10cm}{
+input values of the twiss parameters at the entrance...
+...o the first
+energy are used. This includes the parameters $x_{co}$\ to
+ener.}$">
+<BR>
+<BR>
+<BR>
+
+<P>
+<!-- MATH
+ $x_{co}, x'_{co}, y_{co}, y'_{co}$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$x_{co},x'_{co},y_{co},y'_{co}$">, ener
+<BR>
+
+<P>
+ 
+<IMG
+ WIDTH="457" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$\textstyle \parbox{10cm}{
+coordinates and momentum of the closed orbit around
+...
+...ement
+analysis operation. Values corresponding to the first
+energy are used.}$">
+<BR>
+
+<P>
+ncase       
+ <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of cases analyzed (maximum mxgaca)}$">
+<P>
+nturn       
+ <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of turns for tracing (maximum 1000)}$">
+<BR>
+
+<P>
+njob <BR>
+
+<P>
+1     
+<IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$\textstyle \parbox{10cm}{
+coupled motion analysis is wanted}$">
+<P>
+2     
+<IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.png"
+ ALT="$\textstyle \parbox{10cm}{
+uncoupled motion analysis is wanted}$">
+<BR>
+
+<P>
+nplot <BR>
+
+<P>
+1   
+<IMG
+ WIDTH="457" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img137.png"
+ ALT="$\textstyle \parbox{10cm}{
+plotting of the resulting particles. The operation
+...
+...ccumulation at the end of the job. It
+also computes its own plotting windows.}$">
+<P>
+ 
+  -1   
+<IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$\textstyle \parbox{10cm}{
+no plotting.}$">
+<BR>
+
+<P>
+nprint <BR>
+
+<P>
+ 
+-2   
+<IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.png"
+ ALT="$\textstyle \parbox{10cm}{
+no printing.}$">
+<P>
+ 
+          -1   
+<IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img140.png"
+ ALT="$\textstyle \parbox{10cm}{
+printing at end of lattice only.}$">
+<P>
+0   
+<IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.png"
+ ALT="$\textstyle \parbox{10cm}{
+printing after every element.}$">
+<P>
+n    
+<IMG
+ WIDTH="457" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.png"
+ ALT="$\textstyle \parbox{10cm}{
+printing after every n turns. Normally nprint should
+be set = nturn.}$">
+<BR>
+
+<P>
+<!-- MATH
+ $\epsilon_{x}, \epsilon_{y}$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$\epsilon_{x},\ \epsilon_{y}$"> <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.png"
+ ALT="$\textstyle \parbox{10cm}{
+ncase values for the chosen nominal
+emittances in x and y using the unit
+mm-mrad (E-06 m-rad)}$">
+<BR>
+
+<P>
+anplprt  <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="182" ALIGN="MIDDLE" BORDER="0"
+ SRC="img144.png"
+ ALT="$\textstyle \parbox{10cm}{
+parameter selecting the fast fourier transform optio...
+...rm.
+Only the first case of the geometric aberration run is
+fourier analysed.}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The first example comes from demo5 and provides an FFT analysis with
+the plotting of the FFT spectrum but no printout of the spectrum.
+
+<P>
+The second example, taken from demo12, illustrates how the geometric
+aberration operation uses the twiss parameters computed in a previous
+movement analysis operation.
+
+<P>
+<PRE>
+GEOMETRIC ABERRATIONS
+2 0 .11 0
+0 0 0 0
+0
+2
+1000
+1
+1 -1
+4.5 2.25
+9 4.5
+110;
+stop
+* The following is to illustrate the use of rmat and geometric
+* aberrations in conjunction with movement analysis
+movement analysis
+1 1 1 -3 1 0 0.00001
+0 0 0 0 0 0.002
+0,
+geometric aberration
+0 0 0 0
+0 0 0 0 0
+1 100 1
+1 -2
+10 10,
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html283"
+  HREF="node21.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html281"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html275"
+  HREF="node19.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html284"
+  HREF="node21.html">Hardware values listing of</A>
+<B> Up:</B> <A NAME="tex2html282"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html276"
+  HREF="node19.html">Generation of particles</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Introduction</TITLE>
+<META NAME="description" CONTENT="Introduction">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node2.html">
+<LINK REL="previous" HREF="dimad.html">
+<LINK REL="up" HREF="dimad.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html70"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html68"
+  HREF="dimad.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html62"
+  HREF="dimad.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html71"
+  HREF="node2.html">Element and Machine Data</A>
+<B> Up:</B> <A NAME="tex2html69"
+  HREF="dimad.html">dimad</A>
+<B> Previous:</B> <A NAME="tex2html63"
+  HREF="dimad.html">dimad</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00010000000000000000">
+Introduction</A>
+</H1>
+The present guide corresponds to the  program version dated JUNE 01
+1993.
+
+<P>
+The program DIMAD studies particle  behaviour in circular machines
+and in beam lines.
+
+<P>
+The trajectories of the particles  are computed according to the
+second order matrix formalism[<A
+ HREF="node56.html#klb">1</A>].  It does not provide synchrotron
+motion analysis  but can simulate  it.   The program  provides the
+user with the possibility of defining arbitrary elements to tailor
+the program to specific uses.  The present version of DIMAD is not
+fully debugged.  Please inform one  of the following persons about
+any anomalies observed:
+<PRE><TT>
+ David Douglas at CEBAF 804/249 7512 
+<BR>
+Roger Servranckx at Gabriola 604/247-9567
+</TT></PRE>
+DIMAD,like its predecessor DIMAT,  is the  result of many years of
+experimenting  with several  different  charged particle  computer
+codes.
+
+<P>
+In 1970 the  first author had the good fortune  of discovering the
+program OSECO (Optique du SECond Ordre)  written by J.L.LACLARE at
+SACLAY.  Basically OSECO was a second order Tracking program.   It
+was based  on the second order  matrix formalism of  TRANSPORT and
+was originally written for a CDC computer.   Its usefulness in the
+simulation of the extraction procedure  of the Beam Stretcher ALIS
+and later of EROS led to the  desire for a program that would have
+more analysis power.   The first attempt  to develop a new program
+resulted  in  the program  DEPART  which  was  written as  a  pure
+differential equation ray tracing program but it soon became clear
+that DEPART was very awkward to  use because of the cumbersome way
+in  which  bending   magnets  were  defined  in   the  code.    An
+evolutionary  process then  took place  over a  period of  several
+years finally resulting in the present program called DIMAD.
+Many  people contributed  in various  ways to  the development  of
+DIMAT.    Dr Leon  Katz,   while he  was  Director  of the  Linear
+Accelerator Laboratory at Saskatoon,   provided strong support for
+the work.  Sheila Flory, Dean Jones, Edward Pokraka, Jim Morrison,
+and Jean Mary Miketinac provided  programming support at different
+times during the initial program development.  Ideas were borrowed
+freely  from  the program  OSECO  and  Jean Louis  Laclare  helped
+formulate some of  the early developments.   Karl L  Brown of SLAC
+became influential during the later development phases.  He helped
+formulate the more recent contributions  to the program (geometric
+aberrations,  linear analysis of motion around arbitrary reference
+orbits,  and magnet  misalignment simulations).   It is  for these
+reasons that he has become a coauthor of the present manual.
+
+<P>
+The  authors  wish  to  thank the  many  DIMAT  users  of  other
+laboratories for  their comments  and assistance  in locating  the
+many programming errors that have occurred during the evolution of
+DIMAD.
+
+<P>
+In 1984,  it became clear that  tracking codes should operate in a
+canonical  environment  ,should  provide  options  for  symplectic
+tracking and should conform to the input STANDARD [<A
+ HREF="node56.html#standard1">2</A>]
+[<A
+ HREF="node56.html#standard2">3</A>].
+Adapting  the  input   code  of  MAD  [<A
+ HREF="node56.html#mad">4</A>],    Lindsay  Schachinger
+transformed the program so it would enjoy a common input with MAD,
+thereby conforming to the input STANDARD.
+
+<P>
+With  ideas developed  originally by  E.Forest[<A
+ HREF="node56.html#forest">5</A>],  David  Douglas
+introduced  the  symplectic  tracking options  and  the  canonical
+variables.
+
+<P>
+The following persons, listed in alphabetical order, were actively
+involved in the development of DIMAD :
+<DIV ALIGN="CENTER">
+Karl.L.BROWN (Stanford Linear Accelerator Center)
+</DIV>
+<P>
+<DIV ALIGN="CENTER">David DOUGLAS (Continuous Electron Beam Facility)
+</DIV>
+<P>
+<DIV ALIGN="CENTER">Lindsay SCHACHINGER (Superconducting Super Collider)
+</DIV>
+<P>
+<DIV ALIGN="CENTER">Roger V. SERVRANCKX (University of Saskatchewan)
+</DIV>
+<P>
+<DIV ALIGN="CENTER">Uli WIENANDS (TRIUMF Vancouver)
+</DIV>
+<P>
+<DIV ALIGN="CENTER">
+</DIV>
+<BR>
+<BR>
+The affiliation listed is the one when most of the contribution 
+occured.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html70"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html68"
+  HREF="dimad.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html62"
+  HREF="dimad.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html71"
+  HREF="node2.html">Element and Machine Data</A>
+<B> Up:</B> <A NAME="tex2html69"
+  HREF="dimad.html">dimad</A>
+<B> Previous:</B> <A NAME="tex2html63"
+  HREF="dimad.html">dimad</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

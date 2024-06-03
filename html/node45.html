@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Corrector data definition</TITLE>
+<META NAME="description" CONTENT="Corrector data definition">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node46.html">
+<LINK REL="previous" HREF="node44.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node46.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html545"
+  HREF="node46.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html543"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html537"
+  HREF="node44.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html546"
+  HREF="node46.html">Error data definition</A>
+<B> Up:</B> <A NAME="tex2html544"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html538"
+  HREF="node44.html">Block misalignment</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000104000000000000000">
+Corrector data definition</A>
+</H2>
+   This  operation <A NAME="_corr_"></A> determines  which  elements  in  the  machine  are
+    correctors. By  corrector we mean one  element of a  family(with the
+    same name)  whose position and whose setting may
+    be changed to achieve corrections of closed orbits or beam size
+    at monitor  locations.  
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+CORRector data definition ....(maximum 80 characters) 
+<BR>
+Name i1 f1.....in fn, 
+<BR>..................... 
+<BR>
+Name i1 f1 ....in fn, 
+<BR>
+99,
+</TT></PRE>
+
+<P>
+Note the comma ending  each line defining a corrector. i1  f1 and in
+    fn  are  pairs of  numbers  defining  the  intervals in  which  the
+    elements 'name' are to serve as correctors.   MAXCOR(600)  distinct
+    elements can be used as correctors.
+
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The example comes from demo6.
+
+<P>
+<PRE>
+CORRECTOR DATA DEFINITION
+HC 1 200,
+ksh 1 200,
+ksv 1 200,
+kcv 1 200,
+99,
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

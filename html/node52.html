@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Set misalignment of elements </TITLE>
+<META NAME="description" CONTENT="Set misalignment of elements ">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node53.html">
+<LINK REL="previous" HREF="node51.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node53.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html615"
+  HREF="node53.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html613"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html607"
+  HREF="node51.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html616"
+  HREF="node53.html">Show corrector values</A>
+<B> Up:</B> <A NAME="tex2html614"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html608"
+  HREF="node51.html">Set errors of elements</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001011000000000000000">
+Set misalignment of elements </A>
+</H2>
+               This operation<A NAME="_setm_"></A>  specifies the  random generation  mode and the name of
+                the elements  that should actually  be affected  by the
+    misalignment  errors,  and  the intervals locations  in the  beam line
+                where the errors are applied.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+SET Misalignment .....(maximum 80 characters) 
+<BR>
+nopt 
+<BR>
+nmis 
+<BR>
+name nint <IMG
+ WIDTH="52" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img435.png"
+ ALT="${\rm nb}_{i}\ {\rm nf}_{i}$"> for i from 1 to nint 
+<BR>............. 
+<BR>
+name nint <IMG
+ WIDTH="52" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img435.png"
+ ALT="${\rm nb}_{i}\ {\rm nf}_{i}$"> for i from 1 to nint 
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+nopt   choice option for the random generators
+<BR>
+
+<P>
+0  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img436.png"
+ ALT="$\textstyle \parbox{10cm}{
+the elements are misaligned by the fixed values given
+in the MISA... operation. No randomness is introduced.}$">
+<BR>
+
+<P>
+1  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img437.png"
+ ALT="$\textstyle \parbox{10cm}{
+The misalignment values are obtained by multiplying the
+values given in the MISA... operation by +1 or -1
+randomly generated.}$">
+<BR>
+
+<P>
+2  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img438.png"
+ ALT="$\textstyle \parbox{10cm}{
+A uniform distribution is generated having the rms
+values defined by the MISA... operation.}$">
+<BR>
+
+<P>
+3  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img439.png"
+ ALT="$\textstyle \parbox{10cm}{
+A Gaussian distribution truncated above two standard
+deviations is generated with the rms value defined by
+the MISA... operation.}$">
+<BR>
+
+<P>
+4  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img440.png"
+ ALT="$\textstyle \parbox{10cm}{
+A Gaussian distribution truncated above six standard
+deviations is generated with the rms value defined by
+the MISA... operation.}$">
+<BR>
+
+<P>
+11,12,13,14 <IMG
+ WIDTH="457" HEIGHT="106" ALIGN="MIDDLE" BORDER="0"
+ SRC="img441.png"
+ ALT="$\textstyle \parbox{10cm}{
+the random error is the same as for 1,2,3 or 4
+with...
+... validity of your results with a family of
+runs using the options 1,2,3 or 4.}$">
+<BR>
+
+<P>
+nmis   number of misaligned element type (names)
+<BR>
+
+<P>
+name   name of the family of misaligned element
+<BR>
+
+<P>
+nint   number of intervals in which element is misaligned
+<BR>
+
+<P>
+0  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img442.png"
+ ALT="$\textstyle \parbox{10cm}{
+all element with that name are misaligned. In this
+case no interval range is given.}$">
+<BR>
+
+<P>
+   -1  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img443.png"
+ ALT="$\textstyle \parbox{10cm}{
+no element with the name are misaligned. In this case
+no interval range is given.}$">
+<BR>
+
+<P>
+nb nf  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img444.png"
+ ALT="$\textstyle \parbox{10cm}{
+beginning and end of range of misaligned elements.
+These numbers correspond to the order number in the
+machine list.}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The first example is taken from demo6.
+
+<P>
+In the second example a gaussian disbtribution truncated at 2 sigmas
+will be used for the alignment errors of the elements.
+
+<P>
+<PRE>
+SETMISALIGNMENTS
+12 9
+DFCH 0 DDCH 0 HC 0
+DSH  0 QS1D 0 QS2F 0 QS2D 0 QS3F 0 QS3D 0,
+
+SETMISALIGNMENTS
+13 9
+DFCH 0 DDCH 0 HC 0
+DSH  0 QS1D 0 QS2F 0 QS2D 0 QS3F 0 QS3D 0,
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html615"
+  HREF="node53.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html613"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html607"
+  HREF="node51.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html616"
+  HREF="node53.html">Show corrector values</A>
+<B> Up:</B> <A NAME="tex2html614"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html608"
+  HREF="node51.html">Set errors of elements</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

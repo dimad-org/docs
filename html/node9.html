@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Control flow </TITLE>
+<META NAME="description" CONTENT="Control flow ">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="dimad.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html147"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html145"
+  HREF="dimad.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html139"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html148"
+  HREF="node10.html">Translation to COSY input</A>
+<B> Up:</B> <A NAME="tex2html146"
+  HREF="dimad.html">dimad</A>
+<B> Previous:</B> <A NAME="tex2html140"
+  HREF="node8.html">Beamline definitions</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00060000000000000000">
+ Control flow </A>
+</H1>
+Beamline definitions are followed by a use statement in the form
+<PRE>
+           use, beamlinename.
+</PRE>
+This causes the  beamline beamlinename to be the  current machine for
+dimad.
+Next comes the statement
+<PRE>
+           dimat
+</PRE>
+which passes control to dimad, after translating the machine into the
+correct data  structures for  dimad.  Any  dimad command  can then  be
+issued.
+
+<P>
+A  ';' will  cause  dimad to  stop  and return  control  to the  input
+interface.  Now the user can define a  new machine and then go back to
+dimad and  do a new calculation,   or stop execution with  the command
+stop.   The use command causes the old machine to be replaced by a new
+one.  This  new machine  can be a  previously defined  beamline.   For
+debugging purposes, the dump command from MAD has been retained.  This
+command produces a dump of the  MAD-type data structure describing the
+machine.
+
+<P>
+After a ";" and return to MAD control,   one can specify the use of a
+new line  ,  keeping the previously  defined (and perhaps  modified by
+dimad) elements.To do so one uses the commands :
+<PRE>
+       use,newlinename
+       newbeam
+</PRE>
+The last command "newbeam" passes control back to dimad.
+Observe that without newbeam all  the element parameters are redefined
+to their initial input values.
+A new MAD command is introduced : EXPLODE .
+
+<P>
+Its purpose  is to  provide an explicit  description of  the beamline
+used.
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html147"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html145"
+  HREF="dimad.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html139"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html148"
+  HREF="node10.html">Translation to COSY input</A>
+<B> Up:</B> <A NAME="tex2html146"
+  HREF="dimad.html">dimad</A>
+<B> Previous:</B> <A NAME="tex2html140"
+  HREF="node8.html">Beamline definitions</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

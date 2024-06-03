@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Print selection</TITLE>
+<META NAME="description" CONTENT="Print selection">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node33.html">
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html403"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html401"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html395"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html404"
+  HREF="node33.html">Rmatrix computation</A>
+<B> Up:</B> <A NAME="tex2html402"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html396"
+  HREF="node31.html">Particle distribution analysis</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000919000000000000000">
+ Print selection</A>
+</H2>
+This  operation  <A NAME="_prin_"></A>allows to  determine  points  or intervals  at  which
+ results should be printed.  Whenever,   in some operation,the printing
+ option is set to  -2,-1 or 0 it does supercede  the print selection of
+ the present  operation.  If a print  selection has been  defined,  the
+ print option within any subsequent operation should be set positive.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+PRINt selection  
+<BR>
+keyword  
+<BR>
+name(i)    as many as needed  
+<BR>
+99  
+<BR>
+end,
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+The different keywords are : interval, name, type
+<BR>
+
+<P>
+Interval <IMG
+ WIDTH="457" HEIGHT="126" ALIGN="MIDDLE" BORDER="0"
+ SRC="img264.png"
+ ALT="$\textstyle \parbox{10cm}{ allows to define up to MXLIST
+intervals (default 40...
+...rminates the sequence of names. 99 is followed by
+another keyword or by end,.}$">
+<BR>
+
+<P>
+name  <IMG
+ WIDTH="457" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img265.png"
+ ALT="$\textstyle \parbox{10cm}{: followed by names of elements at
+which printing is...
+...ild character * . AB* means all names starting
+with ab will produce printing.}$">
+<BR>
+
+<P>
+type  <IMG
+ WIDTH="457" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img266.png"
+ ALT="$\textstyle \parbox{10cm}{: the types are : drift, bend,
+quadrupole, multipole...
+...oid,
+monitor, quadsext, matrix, mtwiss, arbitrary. Two
+types may be defined.}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The example comes from demo12.
+
+<P>
+<PRE>
+* The following is to illustrate the use of the PRINT
+* operation
+print
+interval
+m1 m2
+99,
+name
+qf*
+99,
+type
+bend
+99,
+end
+machine : inthis case the print request of -1 supersedes the
+* request found in the previous print command (the same would
+* be true if if the request were 0 : print everywhere)
+1 1.1 0.1 0 0.025 1 1
+0 0 0 0
+0 0 0 0
+-1,
+machine: in this case the printing occurs as requested by the
+* previous print command
+1 1.1 0.1 0 0.025 1 1
+0 0 0 0
+0 0 0 0
+1,
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

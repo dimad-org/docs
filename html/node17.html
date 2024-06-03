@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>COSY translation</TITLE>
+<META NAME="description" CONTENT="COSY translation">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node18.html">
+<LINK REL="previous" HREF="node16.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node18.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html253"
+  HREF="node18.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html251"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html245"
+  HREF="node16.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html254"
+  HREF="node18.html">Detailed chromatic analysis</A>
+<B> Up:</B> <A NAME="tex2html252"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html246"
+  HREF="node16.html">Constant definition</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00094000000000000000">
+ COSY translation</A>
+</H2>
+This operation  <A NAME="_cosy_"></A>will translate a beamline, with its field and alignment errors and possible
+corrections into a COSY [<A
+ HREF="node56.html#cosy">7</A>] input compatible format.
+
+<P>
+It is also possible to concatenate parts of the beamline lying between
+individual elements defined in a list. This allows for faster fitting
+operations in COSY.
+
+<P>
+Since the COSY program operates in canonical variables it is ESSENTIAL 
+that the symplectic option with output in canonical
+variables be turned on.
+
+<P>
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+COSY translation ..... (up to 80 characters) 
+<BR>
+nopt 
+<BR><IMG
+ WIDTH="112" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.png"
+ ALT="$name_{1} ... name_{n} $"> end  
+<BR>
+</TT></PRE>
+
+<P>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+nopt  
+<BR>
+
+<P>
+0 <IMG
+ WIDTH="457" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$\textstyle \parbox{10cm}{
+no concatenated sections of the beam line will be created}$">
+<P>
+1 <IMG
+ WIDTH="457" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img87.png"
+ ALT="$\textstyle \parbox{10cm}{
+concatenated sections of the beam line will be created}$">
+<P>
+<IMG
+ WIDTH="49" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.png"
+ ALT="$name{i}$">    <IMG
+ WIDTH="457" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img89.png"
+ ALT="$\textstyle \parbox{10cm}{names of the elements
+which separate the
+different c...
+...ed sections of the beamline. Present only if the
+parameter nopt is equal to 1}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+<PRE>
+cosy
+0;
+stop
+  
+cosy
+1
+mag1 mag2 end;
+stop
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

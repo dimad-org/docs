@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Movement analysis</TITLE>
+<META NAME="description" CONTENT="Movement analysis">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node30.html">
+<LINK REL="previous" HREF="node28.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node30.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html373"
+  HREF="node30.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html371"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html365"
+  HREF="node28.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html374"
+  HREF="node30.html">Output control</A>
+<B> Up:</B> <A NAME="tex2html372"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html366"
+  HREF="node28.html">Modification of element data</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000916000000000000000">
+Movement analysis</A>
+</H2>
+This  operation  <A NAME="_move_"></A>finds closed  orbits  and  analyses both  stable  and
+ unstable motions  for up  to 15 different  momenta.   <BR>
+NOTE:   no kicks
+ simulating synchrotron oscillation (gkick parameter T <IMG
+ WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.png"
+ ALT="$&lt;$"> 0 ) 
+may exist in the
+ lattice. Results are meaningless in the presence of such kicks.
+<PRE><TT>
+<B>Input Format</B> 
+<BR>
+MOVEment analysis ..... (up to 80 char) 
+<BR>
+nprint nturn nanal nit nener ncoef dist 
+<BR>
+x x' y y' l  <IMG
+ WIDTH="80" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.png"
+ ALT="$\delta_{1} \dots \delta_{{\rm nener}}$"> 
+<BR>
+naplt delmin delmax dnumin dnumax dbmin dbmax ncol nline
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+nprint  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.png"
+ ALT="$\textstyle \parbox{10cm}{ print action for the
+closed orbit information}$">
+<BR>
+
+<P>
+0   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img236.png"
+ ALT="$\textstyle \parbox{10cm}{ action after every element}$">
+<BR>
+
+<P>
+n   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img237.png"
+ ALT="$\textstyle \parbox{10cm}{ action after every n turn}$">
+<BR>
+
+<P>
+nturn  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img238.png"
+ ALT="$\textstyle \parbox{10cm}{ number of turns over
+which analysis is performed. It
+enables user to study higher order resonances.}$">
+<BR>
+
+<P>
+nanal   <BR>
+
+<P>
+0   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img239.png"
+ ALT="$\textstyle \parbox{10cm}{ no stability analysis is done,
+only the closed orbit is
+computed.}$">
+<BR>
+
+<P>
+1   <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img240.png"
+ ALT="$\textstyle \parbox{10cm}{ stability analysis is
+performed (both stable and
+unstable).}$">
+<BR>
+
+<P>
+2   <IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img241.png"
+ ALT="$\textstyle \parbox{10cm}{ gives information about an
+order two resonance. (nturn
+must then be equal to 2.)}$">
+<BR>
+
+<P>
+3   <IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img242.png"
+ ALT="$\textstyle \parbox{10cm}{ gives information about
+an order three resonance.
+(nturn must then be equal to 3.)}$">
+<BR>
+
+<P>
+NOTE:  in both cases where NANAL is equal to 2 or 3 the
+                resonance motion analyzed  is supposed to occur  in the
+                horizontal phase  plane.  If  the user  wants to  study
+                resonance in the vertical plane,  the machine should be
+                set up so that its planes are exchanged.
+                 In  the versions  subsequent  to  April 1  1988,   the
+                coordinates  of the  particles  close  to the  unstable
+                fixed  point  of  the first  momentum  are  stored  for
+                subsequent use in a tracking  operation.  See the demo3
+                input file for its use
+<BR>
+
+<P>
+nit  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img243.png"
+ ALT="$\textstyle \parbox{10cm}{ number of iterations
+used. ABS(nit) iterations are
+...
+...ormed. If nit is negative only the results of the
+last iteration are printed.}$">
+<BR>
+
+<P>
+nener  <IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img244.png"
+ ALT="$\textstyle \parbox{10cm}{ number of momenta for
+which the analysis is performed.
+(max 15)}$">
+<BR>
+
+<P>
+ncoef  <IMG
+ WIDTH="457" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$\textstyle \parbox{10cm}{ number of coefficients
+to be used in the Taylor
+ex...
+... fixed at 0.01(1momentum can be changed by the CONStant definition
+operation.}$">
+<BR>
+
+<P>
+dist  <IMG
+ WIDTH="457" HEIGHT="104" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.png"
+ ALT="$\textstyle \parbox{10cm}{ indicates the 'distance'
+(in phase space) from the
+...
+...e lower value
+depending on the size of the phase space occupied by
+the beam.}$">
+<BR>
+
+<P>
+x,x',y,y',l <IMG
+ WIDTH="457" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img247.png"
+ ALT="$\textstyle \parbox{10cm}{estimate of the coordinates of the
+closed orbit.}$">
+<BR>
+
+<P>
+<IMG
+ WIDTH="16" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img248.png"
+ ALT="$\delta_{i}$">  <IMG
+ WIDTH="457" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img249.png"
+ ALT="$\textstyle \parbox{10cm}{ Momenta(dp/p) for which
+the analysis is
+performed. i = 1 to nener}$">
+<BR>
+
+<P>
+naplt  <BR>
+
+<P>
+0   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.png"
+ ALT="$\textstyle \parbox{10cm}{ no plot of the Taylor expansion
+is required}$">
+<BR>
+
+<P>
+1   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.png"
+ ALT="$\textstyle \parbox{10cm}{ a plot is required}$">
+<BR>
+
+<P>
+delmin delmax
+      <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img252.png"
+ ALT="$\textstyle \parbox{10cm}{ min max of dp/p
+for the plot.}$">
+<BR>
+
+<P>
+dnumin dnumax
+       <IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.png"
+ ALT="$\textstyle \parbox{10cm}{ min max for dnu
+(the first momentum serves as the
+reference to compute the tune difference dnu).}$">
+<BR>
+
+<P>
+dbmin dbmax <IMG
+ WIDTH="457" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img254.png"
+ ALT="$\textstyle \parbox{10cm}{ min max for relative
+difference in betas.}$">
+<BR>
+
+<P>
+ncol nline <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img255.png"
+ ALT="$\textstyle \parbox{10cm}{ number of columns and
+lines desired for plot.}$">
+<BR>
+
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The first example comes from demo2 where it is used to analyse the
+momentum dependence of the parameters of a stable motion.
+
+<P>
+The second, taken from demo3, illustrates the study of a third order
+resonance, and the use of a subsequent tracking operation to obtain
+the separatrices associated to the third order resonance.
+
+<P>
+<PRE>
+MOVEMENT ANALYSIS (CHROMATIC EXPANSION) NO GRAPH
+1 1 1 -4 15 6 0.00001
+0 0 0 0 0
+0.0 -.00001 0.00001 -.00003 0.00003
+-.0001 0.0001 -.0003 0.0003 -.001 0.001
+-.003 0.003 -.006 0.006
+0,
+
+MOVEMENT ANALYSIS TO FIND UNSTABLE CLOSED ORBIT NEAR .03 .002 0 0
+1 3 3 -4 1 0 .00001 0.03 0.002 0.0 0.0 0.0 0.00 0,
+tracking the 10 particles generated by the movemenet analysis just above
+1 -2 0 1600
+0
+11
+-.010 0.010 -.002 0.002
+-.0006 0.0006 .0003 0.0003
+51 51,
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html373"
+  HREF="node30.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html371"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html365"
+  HREF="node28.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html374"
+  HREF="node30.html">Output control</A>
+<B> Up:</B> <A NAME="tex2html372"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html366"
+  HREF="node28.html">Modification of element data</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

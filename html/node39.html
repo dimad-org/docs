@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Space charge set up</TITLE>
+<META NAME="description" CONTENT="Space charge set up">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node40.html">
+<LINK REL="previous" HREF="node38.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node40.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html473"
+  HREF="node40.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html471"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html465"
+  HREF="node38.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html474"
+  HREF="node40.html">Tracking of particles</A>
+<B> Up:</B> <A NAME="tex2html472"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html466"
+  HREF="node38.html">Set symplectic option on</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000926000000000000000">
+Space charge set up</A>
+</H2>
+ This operation<A NAME="_spac_"></A> sets up the parameters to compute the effect of space on particle tracking.
+Presently only a gaussian distribution is used, though the provision of
+other distribution is possible. The space charge remains in effect for
+all the operations that use tracking. (eg: rmat, movement analysis
+tracking etc.).
+
+<P>
+The program uses one reference particle that is situated at a user chosen
+sigma in the space charge distribution. At regular intervals the program
+checks the approximate linear motion traced by this particle.
+
+<P>
+This operation MUST ALWAYS be preceded by a MACHine operation providing
+the list of the twiss parameters at every point of the lattice, and by 
+a REFErence orbit run, and a Constant definition changing the mass of
+the particle to that of the particle for which the space charge
+computation is done.
+
+<P>
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+SPACe charge set up.....(maximum 80 characters) 
+<BR>
+Option chkturn sigma nturn energy epsilonx epsilony delta lambda
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+option  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.png"
+ ALT="$\textstyle \parbox{10cm}{ option number presently not
+used }$">
+<BR>
+
+<P>
+chkturn  <IMG
+ WIDTH="457" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img300.png"
+ ALT="$\textstyle \parbox{10cm}{ number of turns after which
+the space charge distrib...
+...ed in evey tracking operation. It is placed last in the
+sequence of particles}$">
+<BR>
+
+<P>
+sigma  <IMG
+ WIDTH="457" HEIGHT="144" ALIGN="MIDDLE" BORDER="0"
+ SRC="img301.png"
+ ALT="$\textstyle \parbox{10cm}{ the number of sigmas within the
+gaussian space charg...
+... distribution if the
+the motion of the reference particle is relatively smooth}$">
+<BR>
+
+<P>
+nturn  <IMG
+ WIDTH="457" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img302.png"
+ ALT="$\textstyle \parbox{10cm}{ the number of turns the
+setup routine will track the...
+...so that an equilibrium has
+been reached for the emittance of the distribution.}$">
+<BR>
+
+<P>
+energy  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img303.png"
+ ALT="$\textstyle \parbox{10cm}{ The reference energy in GeV for which
+the space charge distribution kicks are computed}$">
+<BR>
+
+<P>
+epsilonx (y)  <IMG
+ WIDTH="457" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$\textstyle \parbox{10cm}{ the one sigma emittance
+of the gaussian beam distrib...
+... distribution at every point in the ring and to
+locate the reference particle}$">
+<BR>
+
+<P>
+delta  <IMG
+ WIDTH="457" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img305.png"
+ ALT="$\textstyle \parbox{10cm}{ the relative energy deviation
+for which the space computation are done}$">
+<BR>
+
+<P>
+lambda  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img306.png"
+ ALT="$\textstyle \parbox{10cm}{ The linear charge density in
+Coulombs per meter }$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The example is taken from demo9. It is given together with the
+operations that must precede it. This operation requires caution
+in the interpretation of the results.
+
+<P>
+<PRE>
+CONSTANT DEF
+12 1 3 0.938259,
+output
+0,
+REFERENCE
+12 0.002 0.002
+0 0 0 0 0 0
+0,
+output
+3,
+set symplectic on
+1 0.5,
+space charge set up
+* new input structure
+1 80 2 80 0.45 15 15 0 2.981e-8,
+* slightly reduced linear density to avoid error on movement analysis
+*1 80 2 80 0.45 15 15 0 1.000e-8,
+* old input structure
+*1 80 0.45 60 60 0 2.981e-8,
+*stop
+*1 80 0.45 60 60 0 1.0e-8,
+GEOM
+1.661 0 14.792 0.0002
+0 0 0 0 0
+2 320 1
+1 -1
+1 1
+60 60
+;
+stop
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html473"
+  HREF="node40.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html471"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html465"
+  HREF="node38.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html474"
+  HREF="node40.html">Tracking of particles</A>
+<B> Up:</B> <A NAME="tex2html472"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html466"
+  HREF="node38.html">Set symplectic option on</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

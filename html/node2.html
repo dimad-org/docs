@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Element and Machine Data Input</TITLE>
+<META NAME="description" CONTENT="Element and Machine Data Input">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node4.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="dimad.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html80"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html78"
+  HREF="dimad.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html72"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html81"
+  HREF="node3.html">Units and field expansion</A>
+<B> Up:</B> <A NAME="tex2html79"
+  HREF="dimad.html">dimad</A>
+<B> Previous:</B> <A NAME="tex2html73"
+  HREF="node1.html">Introduction</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000">
+Element and Machine Data Input</A>
+</H1>
+The  input format  to  dimad now  conforms  quite  closely to  the
+standard format,  as laid out in [<A
+ HREF="node56.html#standard1">2</A>][<A
+ HREF="node56.html#standard2">3</A>]
+
+<P>
+This conversion of
+dimad  to standard  input  was accomplished  by  taking the  input
+subroutines from  the program MAD  [<A
+ HREF="node56.html#mad">4</A>]  and  making from
+these routines (with modifications) an input interface for dimad.
+One exception to the standard format is the units conventions.
+
+<P>
+Input to dimad can be in  either transport units (indicated by the
+keyword "utransport"),   or in  standard units  (indicated by  the
+keyword "ustandard").  For more information on units, see the next
+section.
+
+<P>
+The second difference between  dimad and the standard is
+the addition of  several keywords for dimad.    The added keywords
+are  "quadsext",   "gkick",   and "mtwiss."   These  elements  are
+described more fully later.  Also, in dimad, the solenoid can have
+a quadrupole field.  Elements which are described in [<A
+ HREF="node56.html#standard1">2</A>]
+[<A
+ HREF="node56.html#standard2">3</A>]
+but which are not implemented in dimad are separator and rbend.
+
+<P>
+The job  title entered on  a line  following one with  the keyword
+"title."
+
+<P>
+This can be followed with a units keyword. If no units
+keyword is found, the units are assumed to be the standard units.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html82"
+  HREF="node3.html">Units and field expansion</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html80"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html78"
+  HREF="dimad.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html72"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html81"
+  HREF="node3.html">Units and field expansion</A>
+<B> Up:</B> <A NAME="tex2html79"
+  HREF="dimad.html">dimad</A>
+<B> Previous:</B> <A NAME="tex2html73"
+  HREF="node1.html">Introduction</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

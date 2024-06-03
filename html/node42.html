@@ -1,0 +1,703 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Alignment fitting</TITLE>
+<META NAME="description" CONTENT="Alignment fitting">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node43.html">
+<LINK REL="previous" HREF="node41.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node43.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html515"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html513"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html507"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html516"
+  HREF="node43.html">Baseline definition</A>
+<B> Up:</B> <A NAME="tex2html514"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html508"
+  HREF="node41.html">Operations used in conjunction</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000101000000000000000">
+Alignment fitting</A>
+</H2>
+This operations<A NAME="_alig_"></A> allows the user to fit  the values read in monitors (see their
+ definition  in the  machine  list).   Any  parameter  can  be used  as
+ variable.   Successive use of this  operation can simulate progressive
+ alignment correction  of a  beamline.   A  new minimizer  is installed
+ since  December  1 1984.   It  has  a  default tolerance  and  default
+ increments for the variables which seem adequate. As a consequence the
+ input parameters del(i) have no influence.  We have kept them to avoid
+ changes  in the  input  format .
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+ALIGnment fitting .....(maximum 80 characters) 
+<BR>
+nstep nit nvar ncond nfit nopter 
+<BR><IMG
+ WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img333.png"
+ ALT="$\beta_{x},\alpha_{x},\eta_{x},\eta '_{x}$"> 
+<BR><IMG
+ WIDTH="91" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.png"
+ ALT="$\beta_{y},\alpha_{y},\eta_{y},\eta '_{y}$"> 
+<BR><IMG
+ WIDTH="88" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.png"
+ ALT="$x_{0},x'_{0},y_{0},y'_{0}$"> 
+<BR>
+dx dx' dy dy' 
+<BR>
+nener <IMG
+ WIDTH="39" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.png"
+ ALT="${\rm ener}_{i}$"> for i from 1 to nener 
+<BR>
+Origin 
+<BR><IMG
+ WIDTH="149" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.png"
+ ALT="${\rm name}_{i},{\rm keyword}_{i},{\rm del}_{i}$"> for i from 1 to npar 
+<BR>
+When nfit equals 1 or 2 the following group applies 
+<BR>
+CORR 
+<BR><IMG
+ WIDTH="207" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img338.png"
+ ALT="${\rm name}_{i},{\rm pos}_{i},{\rm opt}_{i} ,{\rm param}_{i},{\rm del}_{i}$"> for i from 1 to ncor 
+<BR>
+NOTE: ncor+npar=nval 
+<BR><IMG
+ WIDTH="273" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img339.png"
+ ALT="${\rm mon}_{i},{\rm pos}_{i},{\rm val\char93 }_{i}, {\rm value}_{i},{\rm weight}_{i},{\rm error}_{i}$"> for i from 1 to ncond
+<BR>
+End of the group for nfit 1 or 2 
+<BR>
+If nfit equals 3 the following group applies : 
+<BR>
+CORR 
+<BR>
+mcorr 
+<BR><IMG
+ WIDTH="139" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img340.png"
+ ALT="${\rm name}_{i},{\rm opt}_{i},{\rm param}_{i}$"> for i from 1 to mcorr 
+<BR>
+nmon nskip 
+<BR><IMG
+ WIDTH="244" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img341.png"
+ ALT="${\rm name}_{i},{\rm val\char93 }_{i},{\rm value}_{i}, {\rm weight}_{i},{\rm error}_{i}$">) for i from 1 to nmon 
+<BR>
+end of group for nfit 3 
+<BR>
+nasp 
+<BR>
+repeat the following nasp times 
+<BR>
+name keywd npas 
+<BR><IMG
+ WIDTH="209" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.png"
+ ALT="${\rm name}_{k},{\rm keyword}_{k},{\rm mult}_{k}, {\rm add}_{k}$"> for  k  from  1 to npas 
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+nstep  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.png"
+ ALT="$\textstyle \parbox{10cm}{ number of steps taken to approach final fit.}$"> <BR>
+
+<P>
+nit  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of iterations used in final step. During thes...
+...ions the stepsizes del of the parameters are
+reduced by a constant factor(5).}$"> <BR>
+
+<P>
+nvar  <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img344.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of variables used (maximum 12).}$"> <BR>
+
+<P>
+ncond <IMG
+ WIDTH="457" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img345.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of conditions fitted.}$"> <BR>
+
+<P>
+nfit  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img346.png"
+ ALT="$\textstyle \parbox{10cm}{
+selects the fitting procedure.}$"> <BR>
+
+<P>
+1   <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img347.png"
+ ALT="$\textstyle \parbox{10cm}{
+Newton's method is used. In this case ncond = nvar.
+We recommend that you do not use this fit option}$"> <BR>
+
+<P>
+2   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.png"
+ ALT="$\textstyle \parbox{10cm}{
+A least square fit is used.}$"> <BR>
+
+<P>
+nopter  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img349.png"
+ ALT="$\textstyle \parbox{10cm}{
+error option parameter for the reading of the monitors,
+this is a noise error of the reading.}$"> <BR>
+
+<P>
+0   <IMG
+ WIDTH="457" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img350.png"
+ ALT="$\textstyle \parbox{10cm}{
+the monitors have no errors}$">
+<BR>
+
+<P>
+1   <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.png"
+ ALT="$\textstyle \parbox{10cm}{
+the monitor error is the value given in the error
+parameter of the monitor(see below) multiplied randomly
+by + and - signs.}$">
+<BR>
+
+<P>
+2   <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.png"
+ ALT="$\textstyle \parbox{10cm}{
+The monitor error is a uniform random distribution with
+a sigma equal to the error value.}$">
+<BR>
+
+<P>
+3   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.png"
+ ALT="$\textstyle \parbox{10cm}{
+The monitor error is a gaussian distribution cutoff at
+two sigmas}$">
+<BR>
+
+<P>
+4   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img354.png"
+ ALT="$\textstyle \parbox{10cm}{
+The monitor error is a gaussian distribution cutoff at
+six sigmas}$">
+<BR>
+
+<P>
+11,12,13,14   <IMG
+ WIDTH="366" HEIGHT="125" ALIGN="MIDDLE" BORDER="0"
+ SRC="img355.png"
+ ALT="$\textstyle \parbox{8cm}{
+the random error is the same as for 1,2,3 or 4
+with ...
+... validity of your results with a family of
+runs using the options 1,2,3 or 4.}$">
+<BR>
+
+<P>
+The initial  seed used is  the same as  that defined by  the operation
+ SEED.   The generation  of  the random  errors  for  the monitors  is,
+ INDEPENDENT of that of the misalignments and of the field errors.
+
+<P>
+<!-- MATH
+ $\beta_{x},\alpha_{x},\eta_{x},\eta '_{x},
+   \beta_{y},\alpha_{y},\eta_{y},\eta '_{y}$
+ -->
+<IMG
+ WIDTH="186" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.png"
+ ALT="$\beta_{x},\alpha_{x},\eta_{x},\eta'_{x}, \beta_{y},\alpha_{y},\eta_{y},\eta'_{y}$"> <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img356.png"
+ ALT="$\textstyle \parbox{10cm}{
+input parameters used in the computing the beam line
+function values}$">
+<BR>
+
+<P>
+<!-- MATH
+ $x_{0},x'_{0},y_{0},y'_{0}$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.png"
+ ALT="$x_{0},x'_{0},y_{0},y'_{0}$"> <IMG
+ WIDTH="457" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img357.png"
+ ALT="$\textstyle \parbox{10cm}{initial values of nominal orbit.}$"> <BR>
+
+<P>
+dx dx' dy dy' <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img358.png"
+ ALT="$\textstyle \parbox{10cm}{
+increments used in the computation of the cx sx cy sy
+functions needed to generate the transfer matrices
+around the nominal orbit}$"> <BR>
+
+<P>
+nener  <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img359.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of momenta traced (maximum 3).}$"> <BR>
+
+<P>
+ener  <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img360.png"
+ ALT="$\textstyle \parbox{10cm}{
+values of the momenta (p-p0)/p0.}$"> <BR>
+
+<P>
+origin  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img361.png"
+ ALT="$\textstyle \parbox{10cm}{
+position used as current origin to position the correctors
+used later. This position is be specified by the name
+of an element.}$"> <BR>
+
+<P>
+<!-- MATH
+ $name_{i},keyword_{i}$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img362.png"
+ ALT="$name_{i},keyword_{i}$"> <IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img363.png"
+ ALT="$\textstyle \parbox{8cm}{
+names of the elements having parameters to be varied.
+npar&lt;=nvar such elements can be used}$">
+<BR>
+
+<P>
+del   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img364.png"
+ ALT="$\textstyle \parbox{10cm}{
+not used in the present version, but must be present in
+the input.}$">
+<BR>
+
+<P>
+CORR  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img365.png"
+ ALT="$\textstyle \parbox{10cm}{
+flag to signal the correctors are going to be used}$">
+<BR>
+
+<P>
+mcor   <IMG
+ WIDTH="457" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img366.png"
+ ALT="$\textstyle \parbox{10cm}{
+for fit 3 : number of corrector names. The
+program ...
+...ble correctors
+whose name are any of name(i). Remember that ncor =
+nvar-npar}$"> <BR>
+
+<P>
+<IMG
+ WIDTH="49" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img367.png"
+ ALT="$name_{i}$">  <IMG
+ WIDTH="457" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img368.png"
+ ALT="$\textstyle \parbox{10cm}{
+name of corrector}$"> <BR>
+
+<P>
+<IMG
+ WIDTH="33" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img369.png"
+ ALT="${\rm pos}_{i}$">  <IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img370.png"
+ ALT="$\textstyle \parbox{10cm}{
+relative position (origin + pos is the absolute
+position of the corrector)}$"> <BR>
+
+<P>
+<IMG
+ WIDTH="32" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img371.png"
+ ALT="${\rm opt}_{i}$">  <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img372.png"
+ ALT="$\textstyle \parbox{10cm}{
+option defining the type of corrector(see SETCorrector
+operation)}$"> <BR>
+
+<P>
+<!-- MATH
+ ${\rm param}_{i}$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img373.png"
+ ALT="${\rm param}_{i}$">  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img374.png"
+ ALT="$\textstyle \parbox{10cm}{
+parameter number of parameter to be varied}$"> <BR>
+
+<P>
+<IMG
+ WIDTH="30" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img375.png"
+ ALT="${\rm del}_{i}$">  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img376.png"
+ ALT="$\textstyle \parbox{10cm}{
+increment used in the fitting routine to vary the
+parameter}$"> <BR>
+
+<P>
+<IMG
+ WIDTH="39" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img377.png"
+ ALT="${\rm mon}_{i}$">  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img378.png"
+ ALT="$\textstyle \parbox{10cm}{
+Monitor name as present in machine list}$"> <BR>
+
+<P>
+nmon  <IMG
+ WIDTH="457" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img379.png"
+ ALT="$\textstyle \parbox{10cm}{
+for nfit 3 : names of distinct monitors. The program
+picks ncond monitors whose name fits name(i) AFTER
+SKIPPING nskip monitors!}$"> <BR>
+
+<P>
+<IMG
+ WIDTH="33" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img369.png"
+ ALT="${\rm pos}_{i}$">  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img380.png"
+ ALT="$\textstyle \parbox{10cm}{
+Relative position of the monitor with respect to the
+origin point.}$"> <BR>
+
+<P>
+<!-- MATH
+ ${\rm val\#}_{i}$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img381.png"
+ ALT="${\rm val\char93 }_{i}$">  <IMG
+ WIDTH="422" HEIGHT="143" ALIGN="MIDDLE" BORDER="0"
+ SRC="img382.png"
+ ALT="$\textstyle \parbox{10cm}{
+\begin{tabbing}
+value number \= \\
+\&gt; =(iener-1)*...
+...y monitor \\
+\&gt; =(iener-1)*4+4 sigy value as read by monitor
+\end{tabbing} }$"> <BR>
+
+<P>
+<!-- MATH
+ ${\rm value}_{i}$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img231.png"
+ ALT="${\rm value}_{i}$"> <IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.png"
+ ALT="$\textstyle \parbox{10cm}{
+values read are those corresponding to momentum iener
+(1 to 3 maximum).}$"> <BR>
+
+<P>
+<!-- MATH
+ ${\rm weight}_{i}$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img384.png"
+ ALT="${\rm weight}_{i}$">  <IMG
+ WIDTH="457" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img385.png"
+ ALT="$\textstyle \parbox{10cm}{
+used in conjuction with the least square fit. This
+...
+...e ${\rm weight}_{i}$ the stronger the constraint to fit the ${\rm value}_{i}$.}$"> <BR>
+
+<P>
+<!-- MATH
+ ${\rm error}_{i}$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img386.png"
+ ALT="${\rm error}_{i}$">  <IMG
+ WIDTH="457" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\textstyle \parbox{10cm}{
+used in conjunction with the parameter nopter. If
+n...
+...f nopter
+is 1 the monitor mon(i) is affected by the error
+${\rm error}_{i}$.}$"> <BR>
+
+<P>
+nasp:  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img388.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of associated parameters}$"> <BR>
+
+<P>
+name1  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img389.png"
+ ALT="$\textstyle \parbox{10cm}{
+Name of element to which some parameters are to be
+associated.}$"> <BR>
+
+<P>
+keywd  <IMG
+ WIDTH="457" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img390.png"
+ ALT="$\textstyle \parbox{10cm}{
+parameter keyword of element name1 to which some
+parameters are to be associated.}$"> <BR>
+
+<P>
+npas  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img391.png"
+ ALT="$\textstyle \parbox{10cm}{
+total number of parameters to be associated to the
+parameter (keywd) of name1.}$"> <BR>
+
+<P>
+<!-- MATH
+ ${\rm name}_{k}$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img392.png"
+ ALT="${\rm name}_{k}$">  <IMG
+ WIDTH="457" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img393.png"
+ ALT="$\textstyle \parbox{10cm}{
+name of the element which has a parameter to be
+associated with name 1.}$"> <BR>
+
+<P>
+<IMG
+ WIDTH="35" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img394.png"
+ ALT="${\rm par}_{k}$">  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img395.png"
+ ALT="$\textstyle \parbox{10cm}{
+keyword of parameter to be associated.}$"> <BR>
+
+<P>
+<!-- MATH
+ ${\rm mult}_{k},{\rm add}_{k}$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img396.png"
+ ALT="${\rm mult}_{k},{\rm add}_{k}$"> <IMG
+ WIDTH="457" HEIGHT="122" ALIGN="MIDDLE" BORDER="0"
+ SRC="img397.png"
+ ALT="$\textstyle \parbox{10cm}{
+multiplicative and additive constants which define t...
+...ameter used in the
+element name1 and to which ${\rm par}_{k}$\ is associated.}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The first two examples are taken from demo6.
+
+<P>
+The third set comes from demo7. Please refer to these demos for
+their relation with other operations.
+
+<P>
+<PRE>
+* the following is an example of an Alignment fitting with nfit = 3
+ALIGNMENT FITTING
+0 1 8 8 3 0
+3 0 0 0 1 0 0 0
+0 0 0 0
+0.00001 0.00001 0.00001 0.00001
+1 0
+MRKC2
+CORR
+2
+HC 0 4
+kcv 3 2
+2 0
+PMC 1 0.0 1.0 20E-06
+PMC 2 0.0 1.0 20E-06
+0,
+
+
+* the following is an example of an Alignment fitting with nfit = 2
+ALIGNMENT FITTING
+0 1 6 6 2 0
+3 0 0 0 1 0 0 0
+0 0 0 0
+0.00001 0.00001 0.00001 0.00001
+1 0
+MRKS1
+corr
+ksv 2 3 2 0.0001 ksv 16 3 2 0.0001 ksv 35 3 2 0.0001
+ksh 7 3 1 0.0001 ksh 19 3 1 0.0001 ksh 32 3 1 0.0001
+PMs 13 1 0.0 1.0 20E-06 PMs 13 2 0.0 1.0 20E-06
+PMs 28 1 0.0 1.0 20E-06 PMs 28 2 0.0 1.0 20E-06
+PMs 40 1 0.0 1.0 20E-06 PMs 40 2 0.0 1.0 20E-06
+0,
+
+
+
+* the following is an example of an Alignment fitting with nfit = 2
+* and shows how to correct  off momentum orbits and beam sigma
+* values
+ALIGNMENT CORRECTION FINAL FOCUS ORBIT
+0 1 6 6 2  0
+49.26950355 0 0 0 22.75617615 0 0 0
+0 0 0 0
+0.000001 0.000001 0.000001 0.000001
+2 0 -0.001
+MFIN
+KORS DXP 0.000001 KORS DYP 0.000001
+KETA DXP 0.000001 KETA DYP 0.000001
+KORT DXP 0.000001 KORT DYP 0.000001
+PMINT 28 1 0.0 1.0 10E-06 PMINT 28 2 0.0 1.0 10E-06
+PMINT 31 5 0.0 1.0 10E-06 PMINT 31 6 0.0 1.0 10E-06
+PMINT 33 1 0.0 1.0 10E-06 PMINT 33 2 0.0 1.0 10E-06
+0,
+ALIGNMENT CORRECTION FINAL FOCUS SIGMAS
+0 2 4 6 2  0
+49.26950355 0 0 0 22.75617615 0 0 0
+0 0 0 0
+0.000001 0.000001 0.000001 0.000001
+3 0 -0.003 0.003
+MFIN
+QC1 K1 0.0001  QS1 K1 0.0001
+Q3XC K1 0.0001  Q2BA K1 0.0001
+PMINT 31  3 1.2E-06 1.0 0.000 PMINT 31  4 1.2E-06 1.0 0.000
+PMINT 31  7 1.2E-06 1.0 0.000 PMINT 31  8 1.2E-06 1.0 0.000
+PMINT 31 11 1.2E-06 1.0 0.000 PMINT 31 12 1.2E-06 1.0 0.000
+0,
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html515"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html513"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html507"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html516"
+  HREF="node43.html">Baseline definition</A>
+<B> Up:</B> <A NAME="tex2html514"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html508"
+  HREF="node41.html">Operations used in conjunction</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

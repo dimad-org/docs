@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Set symplectic option on </TITLE>
+<META NAME="description" CONTENT="Set symplectic option on ">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node39.html">
+<LINK REL="previous" HREF="node37.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node39.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html463"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html461"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html455"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html464"
+  HREF="node39.html">Space charge set up</A>
+<B> Up:</B> <A NAME="tex2html462"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html456"
+  HREF="node37.html">Set limits to variables</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000925000000000000000">
+Set symplectic option on </A>
+</H2>
+This operation sets <A NAME="_sets_"></A>the symplectic option on.  As  soon as this operation is executed
+ all the matrices are transformed to  the six dimensional space defined
+ by the canonical variables x,px,y,py,-tau=-t*c=-al,DE/E.   Please note
+ that,in the present  implementation the approximation v/c=1  was made.
+ All  the movement  analyses performed  in  the program  relate to  the
+ matrix and so the values will change  when this option is on.   Please
+ note that this operation changes the sign of the fifth parameter. This
+ may  need to  be  taken into  account  in the  definition  of the  lag
+ parameter of cavities!!!.
+
+<P>
+NOTE:  In the present  version of the program ,  this option cannot be
+followed  by any  fitting  which changes  matrices.   Any fitting  not
+ changing matrices is allowed (eg:   in alignment fitting when steering
+ only is involved)
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+SET Symplectic option on......(up to 80 characters) 
+<BR>
+Option Energy
+</TT></PRE>
+<B>Parameter definitions </B>
+<BR>
+<BR>
+
+<P>
+Option  <IMG
+ WIDTH="457" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img292.png"
+ ALT="$\textstyle \parbox{10cm}{Determines the mode of
+tracking. This affects only t...
+... not those based on
+matrix analysis (MATRIX, BEAM MATRIX, MACHINE
+FUNCTIONS)}$">
+<P>
+0   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.png"
+ ALT="$\textstyle \parbox{10cm}{
+non symplectic ray trace is done using the canonical
+matrices.}$">
+<P>
+1   <IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img294.png"
+ ALT="$\textstyle \parbox{10cm}{
+Fast version of ray trace is done with the variables
+$x,x',y,y',l,\delta$\ and using the canonical matrices.}$">
+<P>
+2   <IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img295.png"
+ ALT="$\textstyle \parbox{10cm}{
+Fast version of ray trace is done with the variables
+$x,p_{x},y,p_{y},-\tau ,\Delta E/E$\ and using the canonical matrices.}$">
+<P>
+3   <IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img296.png"
+ ALT="$\textstyle \parbox{10cm}{
+Slow version of ray trace is done with the variables
+$x,x',y,y',l,\delta$\ and using the canonical matrices.}$">
+<P>
+4   <IMG
+ WIDTH="457" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.png"
+ ALT="$\textstyle \parbox{10cm}{
+Slow version of ray trace is done with the variables
+$x,p_{x},y,p_{y},-\tau ,\Delta E/E$\ and using the canonical matrices.}$">
+<P>
+Energy  <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img298.png"
+ ALT="$\textstyle \parbox{10cm}{
+Energy of nominal particle (in GeV)}$">
+<P>
+<BR>
+<BR>
+
+<P>
+Note: Options 3 and  4 are not for  the general user.  They  have been
+                used and maintained for debugging purposes only.
+
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The example comes from demo11. Other examples can be found in demos
+2 and 9.
+
+<P>
+<PRE>
+set symplectic option: lagrangian variables, fast ray trace
+1 6.,
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html463"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html461"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html455"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html464"
+  HREF="node39.html">Space charge set up</A>
+<B> Up:</B> <A NAME="tex2html462"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html456"
+  HREF="node37.html">Set limits to variables</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Generation of particles </TITLE>
+<META NAME="description" CONTENT="Generation of particles ">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node20.html">
+<LINK REL="previous" HREF="node18.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node20.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html273"
+  HREF="node20.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html271"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html265"
+  HREF="node18.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html274"
+  HREF="node20.html">Geometric aberrations in multiturn</A>
+<B> Up:</B> <A NAME="tex2html272"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html266"
+  HREF="node18.html">Detailed chromatic analysis</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00096000000000000000">
+   Generation of particles </A>
+</H2>
+This operation <A NAME="_gene_"></A>generates a set of particles to be used subsequently in
+ one or  more particle  tracking operations.   Presently only  gaussian
+ distributions can be generated. This operation MUST ALWAYS be preceded
+ by a BEAM definition operation and by a SEED operation.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+GENEration of particles 
+<BR>
+nopt <IMG
+ WIDTH="60" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img117.png"
+ ALT="$\sigma_{1} \dots \sigma_{6}$"> scale npart 
+<BR><IMG
+ WIDTH="150" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img118.png"
+ ALT="$x_{0},x'_{0},y_{0},y'_{0},al_{0},del_{0}$">
+</TT></PRE>
+<B>Parameter definitions </B>
+
+<P>
+nopt  <BR>
+
+<P>
+1      
+<IMG
+ WIDTH="457" HEIGHT="88" ALIGN="MIDDLE" BORDER="0"
+ SRC="img119.png"
+ ALT="$\textstyle \parbox{10cm}{
+the particles are randomly generated on the surface ...
+...e
+not operational (but for computational efficiency they
+should be set to 1)}$">
+<BR>
+
+<P>
+3      
+<IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img120.png"
+ ALT="$\textstyle \parbox{10cm}{
+the particles generated have coordinates that satisfy
+a six dimensional gaussian distribution.}$">
+<BR>
+
+<P>
+<IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.png"
+ ALT="$\sigma_{i}$"> <BR>
+
+<P>
+ 
+<IMG
+ WIDTH="457" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.png"
+ ALT="$\textstyle \parbox{10cm}{
+the number of sigmas above which the gaussian
+distr...
+...evious
+BEAM operation which is assumed to define the one sigma
+distribution.}$">
+<BR>
+
+<P>
+scale  <BR>
+
+<P>
+ 
+<IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$\textstyle \parbox{10cm}{
+scales the beam size by the given factor.}$">
+<BR>
+
+<P>
+npart  <BR>
+
+<P>
+ 
+<IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of particles to be generated. Maximum number mxpart
+(initially set at 1000 or 10000 depending on versions)}$">
+<BR>
+
+<P>
+<!-- MATH
+ $x_{0},x'_{0},y_{0},y'_{0},al_{0},del_{0}$
+ -->
+<IMG
+ WIDTH="150" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img118.png"
+ ALT="$x_{0},x'_{0},y_{0},y'_{0},al_{0},del_{0}$">    
+
+<P>
+ 
+<IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$\textstyle \parbox{10cm}{
+centroid coordinates around which the
+beam is generated.}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The example shown is taken from dem07 . It will generate 500 particles
+inside the ellipsoid defined by a previous beam matrix definition using
+a gaussian distribution truncated at 6 sigmas for the transverse 
+coordinates and 1 sigma for the longitudinal coordinates.
+
+<P>
+<PRE>
+GENERATION OF PARTICLES
+3 6 6 6 6 1 1 1.0 500
+0 0 0 0 0 0,
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

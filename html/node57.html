@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Appendix: in Dimad, but not yet in the Manual.</TITLE>
+<META NAME="description" CONTENT="Appendix: in Dimad, but not yet in the Manual.">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node58.html">
+<LINK REL="previous" HREF="node56.html">
+<LINK REL="up" HREF="dimad.html">
+<LINK REL="next" HREF="node58.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html663"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html661"
+  HREF="dimad.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html655"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html664"
+  HREF="node58.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html662"
+  HREF="dimad.html">dimad</A>
+<B> Previous:</B> <A NAME="tex2html656"
+  HREF="node56.html">Bibliography</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION000120000000000000000">
+Appendix: in Dimad, but not yet in the Manual.</A>
+</H1>
+<PRE>
+Date: Sat, 16 Sep 2000 07:39:04 -0700
+From: Roger Servranckx &lt;servranc@home.com&gt;
+To: kaltchev@triumf.ca
+Cc: Craddock@triumf.ca
+Subject: fitting using movement
+
+Dear Dobrin
+The introduction of fitting using movement analysis is now done on dimad
+in the directory 
+~roger/dirnewdim.
+It seems to work ok though more tests need to be done.
+The example file is in the same directory : testlsq
+the corresponding output file is : lsqout
+
+The numeric codes are 701 to 712 for the following variables :
+  nux chromx betax alphax etax etapx nuy chromy betay alphay etay etapy
+
+The result is not quite as accurate as with the regular fitting because
+we use movement analysis.
+We may need to check on the choice of ddelta.
+I also use three energies to be able to fit more variables than just the
+chromaticities.
+
+Changes in the program are as follows :
+Common CTUNE in dimad 09,12(twice),18,24,28
+Common FOUT in dimad 09 12(twice) 17 24
+Common FITL in dimad 06,07(twice) 09,11,12(three times),13,15,17,27
+
+
+Subroutine SETOUT in dimad 24
+Subroutine Fitmov in dimad 12 
+Subroutine fitlsq in dimad 12 (An error was corrected : 780 becomes 760
+)
+Function FFFCT in dimad09
+
+I think that is all. All changes have been marked DK &amp; RVS Sept 2000 (I
+hope!!)
+
+Bye for now
+Roger
+</PRE>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

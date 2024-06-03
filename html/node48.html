@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Reference orbit display</TITLE>
+<META NAME="description" CONTENT="Reference orbit display">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node49.html">
+<LINK REL="previous" HREF="node47.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node49.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html575"
+  HREF="node49.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html573"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html567"
+  HREF="node47.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html576"
+  HREF="node49.html">Seed selection</A>
+<B> Up:</B> <A NAME="tex2html574"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html568"
+  HREF="node47.html">Misalignment data definition</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000107000000000000000">
+Reference orbit display</A>
+</H2>
+This operation <A NAME="_refe_"></A>computes the orbit defined by the initial coordinates x
+ x'  y  y' <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img416.png"
+ ALT="$l \ \delta $">,   and provides either a printout
+ or a printer-plot display.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+REFErence ........(maximum 80 characters) 
+<BR>
+nprint sizex sizey 
+<BR><IMG
+ WIDTH="129" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img417.png"
+ ALT="$x_{0},x'_{0},y_{0},y'_{0},l_{0}, \delta{0}$"> 
+<BR>
+npos <IMG
+ WIDTH="33" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img369.png"
+ ALT="${\rm pos}_{i}$"> for i from 1 to npos.
+</TT></PRE>
+Parameter definitions
+<BR>
+<BR>
+
+<P>
+nprint       controls display <BR>
+
+<P>
+1    a printout is provided <BR>
+
+<P>
+2    a printer-plot is provided <BR>
+
+<P>
+11,12  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img418.png"
+ ALT="$\textstyle \parbox{10cm}{
+same as for 1 and 2 , the orbit is a 4-dimensional closed
+orbit in the space defined by the variables x,x',y,y'}$">
+<BR>
+
+<P>
+21,22  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img419.png"
+ ALT="$\textstyle \parbox{10cm}{
+same as for 1 and 2 , the orbit is a six-dimensional
+closed orbit in the space defined by the variables
+x,x',y,y',l,$\delta$.}$">
+<BR>
+
+<P>
+sizex,sizey <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img420.png"
+ ALT="$\textstyle \parbox{10cm}{
+They define the boundaries between
+which the coodinates x and y are plotted. They are always
+needed in the input stream}$">
+<BR>
+.
+   <!-- MATH
+ $x_{0},\dots \delta$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img421.png"
+ ALT="$x_{0},\dots \delta$"> <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img422.png"
+ ALT="$\textstyle \parbox{10cm}{
+six coordinates of the input particle traced to
+determine the orbit}$">
+<BR>
+.
+  npos  <IMG
+ WIDTH="457" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img423.png"
+ ALT="$\textstyle \parbox{10cm}{
+number of positions selected for interval computation maximum
+4}$">
+<BR>
+.
+  <IMG
+ WIDTH="33" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img369.png"
+ ALT="${\rm pos}_{i}$"> <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img424.png"
+ ALT="$\textstyle \parbox{10cm}{
+the rms values are computed individually in all the
+intervals defined by the values 0,${\rm pos}_{i}$ and the end of lattice}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The example comes from dem06.
+
+<P>
+<PRE>
+REFERENCE ORBIT
+12 0.0100 0.0100
+0 0 0 0 0 0.00
+0,
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

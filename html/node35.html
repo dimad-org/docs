@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Seismic perturbation simulation</TITLE>
+<META NAME="description" CONTENT="Seismic perturbation simulation">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node36.html">
+<LINK REL="previous" HREF="node34.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node36.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html433"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html431"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html425"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html434"
+  HREF="node36.html">Set fit points</A>
+<B> Up:</B> <A NAME="tex2html432"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html426"
+  HREF="node34.html">Show values of constants</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000922000000000000000">
+Seismic perturbation simulation</A>
+</H2>
+This operation sets <A NAME="_seis_"></A>transverse misalignements  according to sinewaves of  some chosen
+ frequency and amplitude as a  function of the longitudinal coordinate.
+ The  vertical  oscillation  may  be   different  from  the  horizontal
+ oscillation
+   This  operation  only affects  the  tracking  of particles  and  all
+ operations that use tracking.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+SEISmic simulation............(up to 80 characters) 
+<BR>
+xlambs axseis phixs 
+<BR>
+ylambs ayseis phiys 
+<BR>
+beginname endname
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+xlambs,ylambs   <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img281.png"
+ ALT="$\textstyle \parbox{10cm}{Wave length(in m) for x and y waves}$">
+<P>
+axseis,ayseis   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img282.png"
+ ALT="$\textstyle \parbox{10cm}{Amplitudes of the x and y waves}$">
+<P>
+phixs,phiys   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.png"
+ ALT="$\textstyle \parbox{10cm}{x and y phase shift of each wave.}$">
+<P>
+beginname,endname    <IMG
+ WIDTH="366" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.png"
+ ALT="$\textstyle \parbox{8cm}{name of elements where the wave
+is to start and
+where it is to stop. Use unique names, markers
+preferably.}$">
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

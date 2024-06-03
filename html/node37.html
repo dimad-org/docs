@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Set limits to variables</TITLE>
+<META NAME="description" CONTENT="Set limits to variables">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node38.html">
+<LINK REL="previous" HREF="node36.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node38.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html453"
+  HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html451"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html445"
+  HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html454"
+  HREF="node38.html">Set symplectic option on</A>
+<B> Up:</B> <A NAME="tex2html452"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html446"
+  HREF="node36.html">Set fit points</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000924000000000000000">
+Set limits to variables</A>
+</H2>
+This operation sets <A NAME="_setl_"></A>boundaries  on the  variables used  in the  least square  fitting
+ operation.  This is  done via a supplementary constraint  that uses an
+ internally defined penalty  function.  When boundaries are  in use the
+ achieved  value for  the  fit function  will  depend  strongly on  the
+ distance between the "ideal" minimum and the boundary values when
+ that minimum is outside the boundaries.  Choice of weights will change
+ greatly the final values achieved.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+SET Limits on variables ......(up to 80 characters) 
+<BR>
+name keyword upper lower weight distance 
+<BR>........................................ 
+<BR>
+name keyword upper lower weight distance 
+<BR>
+99,
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+Name  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="$\textstyle \parbox{10cm}{Name of the element for
+which some parameter will be
+affected by boundaries. }$">
+<P>
+Keyword  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.png"
+ ALT="$\textstyle \parbox{10cm}{ Keyword of the
+parameter to be affected by the
+boundaries. }$">
+<P>
+Upper Lower <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img289.png"
+ ALT="$\textstyle \parbox{10cm}{ The upper and
+lower boundaries affecting the
+parameter. }$">
+<P>
+Weight  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img290.png"
+ ALT="$\textstyle \parbox{10cm}{ The weight that is
+applied to the boundary constraint. }$">
+<P>
+Distance  <IMG
+ WIDTH="457" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img291.png"
+ ALT="$\textstyle \parbox{10cm}{ A distance parameter
+that serves to indicate some
+...
+...t. That distance
+is progressively reduced as the iterations step
+increases. }$">
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

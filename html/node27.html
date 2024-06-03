@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Matrix computation</TITLE>
+<META NAME="description" CONTENT="Matrix computation">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node28.html">
+<LINK REL="previous" HREF="node26.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node28.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html353"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html351"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html345"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html354"
+  HREF="node28.html">Modification of element data</A>
+<B> Up:</B> <A NAME="tex2html352"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html346"
+  HREF="node26.html">Machine and beam parameters</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000914000000000000000">
+Matrix computation</A>
+</H2>
+Computes <A NAME="_matr_"></A>matrices and performs movement analysis on matrix obtained at
+ end of lattice.
+<PRE><TT>
+<B>Input Format</B> 
+<BR>
+MATRix computations...........(up to 80 char) 
+<BR>
+norder  mprint  [list]
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+norder <BR>
+
+<P>
+1   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img216.png"
+ ALT="$\textstyle \parbox{10cm}{first order matrix only is printed.}$">
+<BR>
+
+<P>
+2   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.png"
+ ALT="$\textstyle \parbox{10cm}{second order terms are also printed.}$">
+<BR>
+
+<P>
+  <IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img218.png"
+ ALT="$&lt;0$">   <IMG
+ WIDTH="637" HEIGHT="166" ALIGN="MIDDLE" BORDER="0"
+ SRC="img219.png"
+ ALT="$\textstyle \parbox{14cm}{computation is done to order
+abs(norder). mprint must...
+...ll the matrices of
+the beamline in a standard output format (added Dec 1998)}$">
+<BR>
+
+<P>
+mprint <BR>
+
+<P>
+ -2   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$\textstyle \parbox{10cm}{ no printing of matrix.}$">
+<BR>
+
+<P>
+ -1   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.png"
+ ALT="$\textstyle \parbox{10cm}{ print matrix at end of
+machine only.}$">
+<BR>
+
+<P>
+0   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.png"
+ ALT="$\textstyle \parbox{10cm}{ print matrices at
+all intermediary
+points and at final point}$">
+<BR>
+
+<P>
+n   <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.png"
+ ALT="$\textstyle \parbox{10cm}{ where n$&gt;0$, used with
+list and indicates the number of
+intervals in which printing is to occur.}$">
+<BR>
+
+<P>
+list  <IMG
+ WIDTH="457" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img224.png"
+ ALT="$\textstyle \parbox{10cm}{
+set of pairs of numbers which indicate the beginning...
+...ntervals in which printing
+takes place. List may contain up to mxlist numbers}$">
+<BR>
+
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+All three examples come from demo1. 
+
+<P>
+<PRE>
+maTRIX COMPUTATION AT END OF CELL: FIRST ORDER COMPUTATION
+2 1 4 4,
+
+matrix in input format
+-2 1 1 4,
+
+MATRIX COMPUTATION AFTER FIT : SECOND ORDER COMPUTATION.
+2 -1;
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

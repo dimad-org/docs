@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Set fit points</TITLE>
+<META NAME="description" CONTENT="Set fit points">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node37.html">
+<LINK REL="previous" HREF="node35.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node37.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html443"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html441"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html435"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html444"
+  HREF="node37.html">Set limits to variables</A>
+<B> Up:</B> <A NAME="tex2html442"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html436"
+  HREF="node35.html">Seismic perturbation simulation</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000923000000000000000">
+Set fit points</A>
+</H2>
+This operation sets <A NAME="_setf_"></A> intermediate  fit points to be  used with the least  square fit
+ operation.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+SET Fit point.................(up to 80 characters) 
+<BR>
+n Position1 [Position2]
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+n   <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img285.png"
+ ALT="$\textstyle \parbox{10cm}{Number of fit points defined (maximum 2)}$">
+<BR>
+<BR>
+
+<P>
+Positioni <IMG
+ WIDTH="457" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.png"
+ ALT="$\textstyle \parbox{10cm}{Name (must be unique in machine list)
+of the element...
+...itted values are applied. It is
+recommended to use a marker for this purpose.}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The example comes from demo10. It illustrates the use of this operation
+in conjunction with the least square fit operation.
+
+<P>
+<PRE>
+set fitpoints
+2
+fit1
+fit2
+least square fit
+1 2 11 11
+2.8 0 0 0
+0.11 0 0 0
+q1h k1 0.0001
+q2h k1 0.0001
+q3  k1 0.0001
+qf1 k1 0.0001 qd1 k1 0.0001
+qf2 k1 0.0001 qf3 k1 0.0001
+qf  k1 0.0001 qd  k1 0.0001
+qs1 k1 0.0001 qs2 k1 0.0001
+22 0.0 1.0 24 0.0 1.0 27 0.0 1.0
+25 1.773333333 1.0  30 1.5166666666 1.0
+1031 0.0 1.0 1032 0.0 1.0 1033 0.0 1.0 1034 0.0 1.0
+1036 0.0 1.0 1037 0.0 1.0
+0,
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

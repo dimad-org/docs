@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Constant definition </TITLE>
+<META NAME="description" CONTENT="Constant definition ">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node17.html">
+<LINK REL="previous" HREF="node15.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node17.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html243"
+  HREF="node17.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html241"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html235"
+  HREF="node15.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html244"
+  HREF="node17.html">COSY translation</A>
+<B> Up:</B> <A NAME="tex2html242"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html236"
+  HREF="node15.html">Beam matrix tracing</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00093000000000000000">
+ Constant definition </A>
+</H2>
+This  operation<A NAME="_cons_"></A>allows  the user  to redefine  basic constants.    The
+purpose of this  operation is to enable comparison  of the computation
+results  with  other  programs  or  to  update  the  values  as  their
+accuracies increase.The constants accessible to the user are : Pi, the
+velocity of light (in m/sec), the electron mass (or particle mass) (in
+GeV),  the electron (or particle)  radius,  the electron (or particle)
+charge.   The reference relative momentum (dp/p)  that is used in some
+Taylor  expansion with  delta as  independent variable.Two  parameters
+used in the least square minimizer  routine are also accessible to the
+user as well  as the expulsion factor.   The scale  factors ETAFAC and
+SIGFAC are also accessible via this operation. The particle type :
+0 for electrons 1 for protons .
+Use the operation SHO Constant to examine the constants.
+
+<P>
+<PRE><TT>
+<B>Input format:</B> 
+<BR><P>
+CONStant definition .....(up to 80 Characters)  
+<BR>
+followed by : 
+<BR><IMG
+ WIDTH="165" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$n_{1}\ ,\ val_{1}\ \cdots \ n_{p}\ ,\ val_{p} $">
+</TT></PRE>
+
+<P>
+<B>Parameter definitions </B>
+
+<P>
+<IMG
+ WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.png"
+ ALT="$n_{i}$">  <IMG
+ WIDTH="457" HEIGHT="325" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.png"
+ ALT="$\textstyle \parbox{10cm}{ is the order number of the ith constant
+to be redefi...
+...\\
+\&gt;12\ \&gt; \hspace{0.5cm} particle type(0:electron, 1:proton)
+\end{tabbing}}$">
+<BR>
+
+<P>
+<IMG
+ WIDTH="31" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.png"
+ ALT="$val_{i}$">   new value of the constant <IMG
+ WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.png"
+ ALT="$n_{i}$">.
+
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The example given is extracted from demo9 and shows the change of the
+current particle type to a proton and sets the rest mass to the value 
+of the rest mass of a proton.
+
+<P>
+<PRE>
+ CONSTANT DEF
+ 12 1 3 0.938259,
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html243"
+  HREF="node17.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html241"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html235"
+  HREF="node15.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html244"
+  HREF="node17.html">COSY translation</A>
+<B> Up:</B> <A NAME="tex2html242"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html236"
+  HREF="node15.html">Beam matrix tracing</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

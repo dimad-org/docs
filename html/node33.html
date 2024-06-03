@@ -1,0 +1,328 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Rmatrix computation</TITLE>
+<META NAME="description" CONTENT="Rmatrix computation">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node34.html">
+<LINK REL="previous" HREF="node32.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node34.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html413"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html411"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html405"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html414"
+  HREF="node34.html">Show values of constants</A>
+<B> Up:</B> <A NAME="tex2html412"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html406"
+  HREF="node32.html">Print selection</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000920000000000000000">
+Rmatrix computation</A>
+</H2>
+Computes <A NAME="_rmat_"></A>in chosen  intervals the 6X6 transfer matrix  of the beamline
+ comprised in these  intervals. The computation is done by the tracking
+ of seven particles chosen around a given initial set of coordinates
+  This  enables to  determine the  first order  behaviour of  beamlines
+ affected by errors and misalignements.   The program also provides the
+ entrance and exit  orbit displacements.  They are  needed to correctly
+ use  the matrix.  Using  the given  emittances <!-- MATH
+ $\epsilon_{1} \   
+      \epsilon_{2}$
+ -->
+<IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.png"
+ ALT="$ \epsilon_{1} \
+\epsilon_{2} $"> for the  two
+ eigenmodes (when they are stable)   the program computes the projected
+ emittances on  the x-plane and the y-plane.  Given an injected beam by
+ its beta alpha and emittance values,  the program computes the coupled
+ envelope and then prints the projected emittances of that envelope.
+<PRE><TT>
+<B>Input format</B>  
+<BR>
+RMATrix.......................(up to 80 characters) 
+<BR><IMG
+ WIDTH="119" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$x_{0} \ x'_{0} \ y_{0} \ y'_{0} \ l_{0} \ \delta_{0}$"> 
+<BR>
+dx dx' dy dy' dl d<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="$\delta$"> 
+<BR>
+norder mprint [nlist] 
+<BR>
+nmopt 
+<BR><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.png"
+ ALT="$ \epsilon_{1} \
+\epsilon_{2} $"> 
+<BR><IMG
+ WIDTH="198" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$ \beta_{x} \ alpha_{x} \ \epsilon_{x} \ beta_{y} \ alph_{y} \ \epsilon_{y} $">
+</TT></PRE>
+P<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+<!-- MATH
+ $x_{0} \ x'_{0} \ y_{0} \ y'_{0} \ l_{0} \  \delta_{0}$
+ -->
+<IMG
+ WIDTH="119" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$x_{0} \ x'_{0} \ y_{0} \ y'_{0} \ l_{0} \ \delta_{0}$"> <BR>
+
+<P>
+ <IMG
+ WIDTH="457" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img270.png"
+ ALT="$\textstyle \parbox{10cm}{
+initial coordinates of reference orbit
+When $\delta...
+...us
+movement analysis. The values corresponding to the
+first energy are used.}$">     dx dx' dy dy'  dl d<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="$\delta$"> <BR>
+
+<P>
+<BR>
+<BR>
+<BR><IMG
+ WIDTH="457" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img271.png"
+ ALT="$\textstyle \parbox{10cm}{
+increments used to generate the six
+particles surrounding the reference orbit.}$">
+<BR>
+
+<P>
+norder  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.png"
+ ALT="$\textstyle \parbox{10cm}{
+order of the computation: 1 or 11 . The order of th...
+...omputation is 1. when norder = 11 the output is in the
+standard input format.}$">
+<BR>
+
+<P>
+mprint <BR>
+
+<P>
+ -2   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$\textstyle \parbox{10cm}{ no printing of matrix.}$">
+<BR>
+
+<P>
+ -1   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.png"
+ ALT="$\textstyle \parbox{10cm}{ print matrix at end of
+machine only.}$">
+<BR>
+
+<P>
+0   <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.png"
+ ALT="$\textstyle \parbox{10cm}{ print matrices at
+all intermediary
+points and at final point}$">
+<BR>
+
+<P>
+n   <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$\textstyle \parbox{10cm}{ where n$&gt;0$, used with
+list and indicates the number of
+intervals for which the matrix is computed.}$">
+<BR>
+
+<P>
+<BR>
+<BR> 
+
+<P>
+nlist  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.png"
+ ALT="$\textstyle \parbox{10cm}{
+mprint pairs of numbers defining the intervals for
+which the matrix will be computed.}$">
+<BR>
+
+<P>
+nmopt  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.png"
+ ALT="$\textstyle \parbox{10cm}{
+option number. when 0 the following data is not needed
+as the coupled beam emttances are not computed}$">
+<BR>
+
+<P>
+<!-- MATH
+ $\epsilon_{1} \ \epsilon_{2}$
+ -->
+<IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.png"
+ ALT="$ \epsilon_{1} \
+\epsilon_{2} $">  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img276.png"
+ ALT="$\textstyle \parbox{10cm}{
+Emittances present in each eigenmode used to compute
+the projected emittances on both the horizontal and the
+vertical planes}$">
+<BR>
+
+<P>
+<!-- MATH
+ $\beta_{x} \ \alpha_{x} \ \epsilon_{x}$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$\beta_{x} \ \alpha_{x} \ \epsilon_{x}$">  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img278.png"
+ ALT="$\textstyle \parbox{10cm}{
+Parameters defining the horizontal projection
+of an injected beam}$">
+<BR>
+
+<P>
+<!-- MATH
+ $\beta_{y} \ \alpha_{y} \ \epsilon_{y}$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img279.png"
+ ALT="$\beta_{y} \ \alpha_{y} \ \epsilon_{y}$">  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img280.png"
+ ALT="$\textstyle \parbox{10cm}{
+Parameters for the vertical projection of the
+injected beam}$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<B>Examples</B>
+
+<P>
+The first example comes from demo9.
+
+<P>
+The second, which illustrates its use in conjunction with a movement
+analysis operation, comes from demo12.
+
+<P>
+<PRE>
+rmatrix
+0 0 0 0 0 0
+1.0e-06 1.0e-06 1.0e-06 1.0e-06 1.0e-06 1.0e-06
+1 -1
+0,
+
+* The following is to illustrate the use of rmat and geometric
+* aberrations in conjunction with movement analysis
+movement analysis
+1 1 1 -3 1 0 0.00001
+0 0 0 0 0 0.002
+0,
+geometric aberration
+0 0 0 0
+0 0 0 0 0
+1 100 1
+1 -2
+10 10,
+print
+interval
+m1 m2
+99,
+end,
+rmat
+0 0 0 0 0 0
+1.0e-6 1.0e-6 1.0e-6 1.0e-6 1.0e-6 1.0e-6
+1 1,
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html413"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html411"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html405"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html414"
+  HREF="node34.html">Show values of constants</A>
+<B> Up:</B> <A NAME="tex2html412"
+  HREF="node13.html">Use and description of</A>
+<B> Previous:</B> <A NAME="tex2html406"
+  HREF="node32.html">Print selection</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

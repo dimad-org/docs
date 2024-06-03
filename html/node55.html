@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Synchrotron radiation data definition</TITLE>
+<META NAME="description" CONTENT="Synchrotron radiation data definition">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="previous" HREF="node54.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node56.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html643"
+  HREF="node56.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html641"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html637"
+  HREF="node54.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html644"
+  HREF="node56.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html642"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html638"
+  HREF="node54.html">Show or save misalignment</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001014000000000000000">
+Synchrotron radiation data definition</A>
+</H2>
+ This operation<A NAME="_sync_"></A> computes the energy losses due to synchrotron
+           radiation in  a deterministic way.It only  affects operation
+           using particle tracing.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+SYNChrotron radiation.....(maximum 80 characters) 
+<BR>
+Energy option randomoption, 
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+Energy     Initial nominal energy in GeV <BR>
+
+<P>
+option   option deciding on type of simulation.
+<BR>
+
+<P>
+0  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img456.png"
+ ALT="$\textstyle \parbox{10cm}{
+no synchrotron radiation effect is simulated.}$">
+<BR>
+
+<P>
+1  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img457.png"
+ ALT="$\textstyle \parbox{10cm}{
+synchrotron radiation loss is computed in every dipole.
+Particles lose that energy at the entrance and exit of
+the magnet.}$">
+<BR>
+
+<P>
+2  <IMG
+ WIDTH="457" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img458.png"
+ ALT="$\textstyle \parbox{10cm}{
+synchrotron emittance growth is simulated randomly f...
+...
+energy loss of the particles. This effect is simulated
+only in the dipoles.}$">
+<BR>
+
+<P>
+3  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img459.png"
+ ALT="$\textstyle \parbox{10cm}{
+both the radiation loss and the emitttance growth are
+simulate in the dipoles only.}$">
+<BR>
+
+<P>
+4  <IMG
+ WIDTH="457" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img460.png"
+ ALT="$\textstyle \parbox{10cm}{
+synchrotron radiation is simulated in the dipoles as...
+...ion 2 to which is added a synchrotron quantum
+fluctuation in the quadrupoles.}$">
+<BR>
+
+<P>
+5  <IMG
+ WIDTH="457" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img461.png"
+ ALT="$\textstyle \parbox{10cm}{
+synchrotron radiation is simulated in the dipoles as...
+...ion 3 to which is added a synchrotron quantum
+fluctuation in the quadrupoles.}$">
+<BR>
+
+<P>
+10  <IMG
+ WIDTH="457" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img462.png"
+ ALT="$\textstyle \parbox{10cm}{
+synchrotron radiation losses and emittance growths a...
+...ole bends according to
+a more realistic simulation developed by Ghislain Roy.}$">
+<BR>
+
+<P>
+11  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img463.png"
+ ALT="$\textstyle \parbox{10cm}{
+as in 10 both radiation losses and growths are computed
+in bends and quadrupoles.}$">
+<BR>
+
+<P>
+12  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img464.png"
+ ALT="$\textstyle \parbox{10cm}{
+Only the emittance growths are computed in bends with
+the Ghislain Roy's simulation.}$">
+<BR>
+
+<P>
+13  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img465.png"
+ ALT="$\textstyle \parbox{10cm}{
+Only the emittance growths are computed in bends and
+quadrupoles using Ghislain Roy's simulation.}$">
+<BR>
+
+<P>
+randomoption <IMG
+ WIDTH="366" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img466.png"
+ ALT="$\textstyle \parbox{8cm}{
+choice of the random generator, applies to above
+options 2 and 3 only.}$">
+<BR>
+
+<P>
+1  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img467.png"
+ ALT="$\textstyle \parbox{10cm}{
+the random generator is binary + and - randomly
+affecting the energy spread creating the emittance
+growth.}$">
+<BR>
+
+<P>
+2  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img468.png"
+ ALT="$\textstyle \parbox{10cm}{
+the random generator is uniform}$">
+<BR>
+
+<P>
+3  <IMG
+ WIDTH="457" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img469.png"
+ ALT="$\textstyle \parbox{10cm}{
+the random generator is gaussian : note that here th...
+...for the options 2 and 3 above which enable the
+emittance growth calculations.}$">
+<BR>
+
+<P>
+11,12,13 <IMG
+ WIDTH="457" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img470.png"
+ ALT="$\textstyle \parbox{10cm}{
+the fast random generator is used to produce the
+se...
+...ted by some unwanted correlations. In case of
+doubt use the options 1,2 or 3.}$"><B>Examples</B>
+
+<P>
+The examples given come from demo7.
+
+<P>
+<PRE>
+SYNCHROTRON RADIATION DEFINITION
+50 1 3,
+
+*SYNCHROTRON RADIATION DEFINITION
+*50 3 3,
+</PRE>
+
+<P>
+
+<BR><HR>
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>

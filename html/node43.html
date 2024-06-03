@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Baseline definition</TITLE>
+<META NAME="description" CONTENT="Baseline definition">
+<META NAME="keywords" CONTENT="dimad">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="dimad.css">
+
+<LINK REL="next" HREF="node44.html">
+<LINK REL="previous" HREF="node42.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node44.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html525"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html523"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html517"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html526"
+  HREF="node44.html">Block misalignment</A>
+<B> Up:</B> <A NAME="tex2html524"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html518"
+  HREF="node42.html">Alignment fitting</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000102000000000000000">
+Baseline definition</A>
+</H2>
+This operation<A NAME="_base_"></A>  defines a  baseline resulting  from surveying  errors.
+ The baseline  must be considered  like a  new reference orbit.   It is
+ obtained by two  successive operations.  In the first a  few points on
+ the original reference orbit are chosen as main surveying points.   In
+ tunnel  construction they  could  be  associated with  the  surveyor's
+ penetration points.  They  are accompanied by random  x,y,z coordinate
+ errors (usually rather  big :  say 5  to 10 mm)  The  second operation
+ defines between the preceding basepoints intermediate points which are
+ obtained  by successive  aiming from  the  current point  to the  next
+ basepoint.  This  aiming is accompanied  by a systematic  aiming error
+ (varying from segment to segment) to which is added a random aim error
+ (usually  smaller  than  the  systematic error)   The  origin  of  the
+ systematic error can  be due to the  instruments used but also  due to
+ ambient  conditions under  which the  surveying  is performed.    This
+ operation MUST  BE PRECEDED by a  SEED operation.   This  operation is
+ still being tested and developped.Use at OWN RISK.
+<PRE><TT>
+<B>Input format</B> 
+<BR>
+BASEline definition 
+<BR>
+npen Kxxx Kxxx .... Kxxx 
+<BR>
+nsub <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img82.png"
+ ALT="$\sigma$"> 
+<BR>
+Kyyy Kyyy ..... Kyyy 
+<BR><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img398.png"
+ ALT="$\sigma_{1} \ \sigma_{2}$">
+</TT></PRE>
+<B>Parameter definitions</B>
+<BR>
+<BR>
+
+<P>
+npen  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img399.png"
+ ALT="$\textstyle \parbox{10cm}{
+Number of penetration points }$">
+<BR>
+
+<P>
+Kxxx  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img400.png"
+ ALT="$\textstyle \parbox{10cm}{
+a set of npen Elements of the KICK type. There MUST be
+one such kick at the beginning and at the end of the
+lattice. }$">
+<BR>
+
+<P>
+nsub  <IMG
+ WIDTH="457" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img401.png"
+ ALT="$\textstyle \parbox{10cm}{
+Number of subdivision points. }$">
+<BR>
+
+<P>
+<IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img82.png"
+ ALT="$\sigma$">  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img402.png"
+ ALT="$\textstyle \parbox{10cm}{
+the displacement sigma to be used in the generation of
+the coordinate displacements of the npen penetration
+points. }$">
+<BR>
+
+<P>
+Kyyy  <IMG
+ WIDTH="457" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img403.png"
+ ALT="$\textstyle \parbox{10cm}{
+nsub KICK elements defining the intermediate points.
+They may not coincide with any of the basepoints. }$">
+<BR>
+
+<P>
+<IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img404.png"
+ ALT="$\sigma_{1}$">  <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img405.png"
+ ALT="$\textstyle \parbox{10cm}{
+angular sigma (in radians) of the systematic aim error }$">
+<BR>
+
+<P>
+<IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img406.png"
+ ALT="$\sigma_{2}$">  <IMG
+ WIDTH="457" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img407.png"
+ ALT="$\textstyle \parbox{10cm}{
+angular sigma (in radians) of the random aim error }$">
+<P>
+<BR>
+<BR> 
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html525"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html523"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html517"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html526"
+  HREF="node44.html">Block misalignment</A>
+<B> Up:</B> <A NAME="tex2html524"
+  HREF="node41.html">Operations used in conjunction</A>
+<B> Previous:</B> <A NAME="tex2html518"
+  HREF="node42.html">Alignment fitting</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dobrin Kaltchev
+2004-10-20
+</ADDRESS>
+</BODY>
+</HTML>
